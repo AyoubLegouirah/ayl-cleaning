@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "AYL Cleaning — Nettoyage professionnel de vitres, canapés et après travaux à Bruxelles. Devis gratuit en 24h." } = Astro.props;
+---
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{title} | AYL Cleaning Bruxelles</title>
+<meta name="description" content={description}/>
+<script is:inline src="https://cdn.tailwindcss.com/3.4.1"></script>
+<script is:inline>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface": "#0f131c",
+          "primary": "#a1c9ff",
+          "on-primary": "#00325a",
+          "primary-container": "#4494e7",
+          "on-primary-container": "#002b4f",
+          "secondary": "#aec8ee",
+          "secondary-container": "#314a6a",
+          "tertiary": "#ffb86f",
+          "on-surface": "#dfe2ee",
+          "on-surface-variant": "#c0c7d3",
+          "surface-container": "#1c2028",
+          "surface-container-low": "#181c24",
+          "surface-container-high": "#262a33",
+          "surface-container-highest": "#31353e",
+          "surface-container-lowest": "#0a0e16",
+          "outline-variant": "#414751",
+        },
+        fontFamily: { "headline": ["Manrope"], "body": ["Inter"] },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style is:inline>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+</style>
