@@ -1,0 +1,246 @@
+---
+---
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | AYL Cleaning Bruxelles</title>
+<meta name="description" content="Contactez AYL Cleaning pour un devis gratuit. Nettoyage de vitres, canapés et après travaux à Bruxelles. Réponse en 24h."/>
+<script is:inline src="https://cdn.tailwindcss.com/3.4.1"></script>
+<script is:inline>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface": "#0f131c",
+          "primary": "#a1c9ff",
+          "on-primary": "#00325a",
+          "primary-container": "#4494e7",
+          "on-primary-container": "#002b4f",
+          "secondary": "#aec8ee",
+          "secondary-container": "#314a6a",
+          "tertiary": "#ffb86f",
+          "on-surface": "#dfe2ee",
+          "on-surface-variant": "#c0c7d3",
+          "surface-container": "#1c2028",
+          "surface-container-low": "#181c24",
+          "surface-container-high": "#262a33",
+          "surface-container-highest": "#31353e",
+          "surface-container-lowest": "#0a0e16",
+          "outline-variant": "#414751",
+          "outline": "#8b919d",
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style is:inline>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .glass-nav { background-color: rgba(15,19,28,0.7); backdrop-filter: blur(32px); }
+  .ghost-border { border: 1px solid rgba(65,71,81,0.15); }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 w-full glass-nav border-b border-outline-variant/10 shadow-[0_40px_60px_-10px_rgba(223,226,238,0.06)]">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+    <a href="/" class="text-2xl font-black text-[#a1c9ff] tracking-tighter font-headline">AYL</a>
+    <div class="hidden md:flex items-center gap-8 font-headline font-bold tracking-tight">
+      <a class="text-[#dfe2ee]/80 hover:text-[#a1c9ff] transition-colors" href="/">Accueil</a>
+      <a class="text-[#dfe2ee]/80 hover:text-[#a1c9ff] transition-colors" href="/services">Services</a>
+      <a class="text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1" href="/contact">Contact</a>
+    </div>
+    <a href="/contact" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-md font-headline font-bold text-sm hover:shadow-[0_0_15px_rgba(161,201,255,0.4)] transition-all">
+      Devis gratuit
+    </a>
+  </div>
+</nav>
+
+<main class="min-h-screen">
+
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-8 max-w-7xl mx-auto">
+    <div class="max-w-3xl">
+      <span class="inline-block text-tertiary font-bold tracking-widest uppercase text-xs mb-4">Contactez-nous</span>
+      <h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tighter mb-8 leading-[0.9]">
+        Un espace impeccable<br/><span class="text-primary">commence ici.</span>
+      </h1>
+      <p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
+        Particulier ou professionnel, notre équipe basée à Bruxelles est prête à intervenir rapidement. Devis gratuit sous 24h.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="px-8 pb-32 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Formulaire -->
+      <div class="lg:col-span-7 bg-surface-container rounded-xl p-8 md:p-12 ghost-border shadow-2xl">
+        <h2 class="text-2xl font-headline font-bold mb-8">Demande de devis</h2>
+        <form class="space-y-6" action="https://wa.me/32488338952" method="get" target="_blank">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Nom</label>
+              <input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/40 rounded-lg py-4 px-5 text-on-surface placeholder:text-outline/40 transition-all" placeholder="Votre nom" type="text"/>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Téléphone</label>
+              <input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/40 rounded-lg py-4 px-5 text-on-surface placeholder:text-outline/40 transition-all" placeholder="04XX XX XX XX" type="tel"/>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Service souhaité</label>
+            <select class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/40 rounded-lg py-4 px-5 text-on-surface transition-all">
+              <option value="">Choisir un service</option>
+              <option>Nettoyage de vitres</option>
+              <option>Nettoyage de canapés</option>
+              <option>Nettoyage après travaux</option>
+              <option>Nettoyage de bureaux</option>
+              <option>Plusieurs services</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Message</label>
+            <textarea class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-primary/40 rounded-lg py-4 px-5 text-on-surface placeholder:text-outline/40 transition-all resize-none" placeholder="Décrivez votre besoin, surface approximative, commune..." rows="5"></textarea>
+          </div>
+          <a href="https://wa.me/32488338952" target="_blank" class="inline-block w-full md:w-auto bg-primary text-on-primary px-10 py-4 rounded-lg font-headline font-extrabold uppercase tracking-tighter text-sm hover:bg-primary-container transition-colors shadow-lg text-center">
+            Envoyer via WhatsApp
+          </a>
+        </form>
+      </div>
+
+      <!-- Infos contact -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+
+        <!-- WhatsApp CTA -->
+        <div class="bg-primary/5 rounded-xl p-8 ghost-border group hover:bg-primary/10 transition-all duration-300 flex items-center justify-between">
+          <div>
+            <h3 class="text-primary font-headline font-bold text-xl mb-1">Réponse instantanée</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Temps de réponse : moins de 5 minutes</p>
+            <a class="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-3 rounded-lg font-headline font-bold hover:scale-105 transition-transform" href="https://wa.me/32488338952" target="_blank">
+              <span class="material-symbols-outlined">chat</span>
+              Chat WhatsApp
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <span class="material-symbols-outlined text-primary text-6xl opacity-20 group-hover:opacity-40 transition-opacity" style="font-variation-settings: 'FILL' 1;">phone_iphone</span>
+          </div>
+        </div>
+
+        <!-- Téléphone -->
+        <div class="bg-surface-container-low rounded-xl p-8 ghost-border">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-xl">call</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Téléphone</span>
+          </div>
+          <a href="tel:+32488338952" class="text-xl font-headline font-bold hover:text-primary transition-colors">
+            0488 33 89 52
+          </a>
+        </div>
+
+        <!-- Zone -->
+        <div class="bg-surface-container-low rounded-xl p-8 ghost-border">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Zone d'intervention</span>
+          </div>
+          <p class="text-xl font-headline font-bold">Bruxelles & environs</p>
+          <p class="text-on-surface-variant text-sm mt-2">Anderlecht, Ixelles, Uccle, Forest, Schaerbeek, Molenbeek, Saint-Gilles, Etterbeek, Laeken et plus.</p>
+        </div>
+
+        <!-- Horaires -->
+        <div class="bg-surface-container-low rounded-xl p-8 ghost-border">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+            </div>
+            <span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Horaires</span>
+          </div>
+          <p class="text-xl font-headline font-bold">7j/7</p>
+          <p class="text-on-surface-variant text-sm mt-2">Lundi – Dimanche, 09:00 – 17:00</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BREAK -->
+  <section class="px-8 pb-32 max-w-7xl mx-auto">
+    <div class="relative h-[400px] rounded-2xl overflow-hidden ghost-border">
+      <img alt="Intérieur luxueux propre à Bruxelles" class="w-full h-full object-cover"
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+      <div class="absolute bottom-12 left-12 max-w-lg">
+        <h3 class="text-3xl font-headline font-extrabold text-on-surface mb-2">Votre espace, notre priorité.</h3>
+        <p class="text-on-surface-variant">Nos professionnels interviennent avec précision et discrétion dans tous types d'espaces.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#0a0e16] border-t border-[#414751]/10 pt-16 pb-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-sm text-[#dfe2ee]/60 mb-16">
+    <div class="space-y-6">
+      <div class="text-xl font-black text-[#a1c9ff] font-headline">AYL</div>
+      <p class="leading-relaxed max-w-xs">Nettoyage professionnel à Bruxelles et communes environnantes.</p>
+      <a href="https://wa.me/32488338952" target="_blank" class="inline-flex items-center gap-2 bg-[#1a472a] border border-[#2d6a44] text-[#4ade80] px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#1f5733] transition-colors">
+        💚 WhatsApp
+      </a>
+    </div>
+    <div class="space-y-4">
+      <h4 class="text-[#dfe2ee] font-bold uppercase tracking-widest text-xs">Services</h4>
+      <ul class="space-y-2">
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/services/nettoyage-vitres">Nettoyage de vitres</a></li>
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/services/nettoyage-canape">Nettoyage de canapés</a></li>
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/services/nettoyage-bureau">Nettoyage de bureaux</a></li>
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/services/nettoyage-apres-travaux">Après travaux</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h4 class="text-[#dfe2ee] font-bold uppercase tracking-widest text-xs">Navigation</h4>
+      <ul class="space-y-2">
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/">Accueil</a></li>
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/services">Services</a></li>
+        <li><a class="hover:text-[#a1c9ff] transition-colors block" href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="space-y-4">
+      <h4 class="text-[#dfe2ee] font-bold uppercase tracking-widest text-xs">Contact</h4>
+      <ul class="space-y-2">
+        <li><a href="tel:+32488338952" class="hover:text-[#a1c9ff] transition-colors">0488 33 89 52</a></li>
+        <li>Bruxelles, Belgique</li>
+        <li>Lun–Dim 09:00–17:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-8 pt-8 border-t border-[#414751]/10 text-center text-xs text-[#dfe2ee]/30">
+    <p>© 2026 AYL Cleaning · Bruxelles · Nettoyage Professionnel</p>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all" href="https://wa.me/32488338952" target="_blank">
+  <svg fill="currentColor" height="32" viewBox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+  </svg>
+</a>
+
+</body>
+</html>
