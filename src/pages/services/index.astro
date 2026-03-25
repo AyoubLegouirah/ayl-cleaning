@@ -29,136 +29,71 @@ import Head from '../../components/Head.astro';
   </section>
 
   <!-- SERVICES GRID -->
-  <section class="max-w-7xl mx-auto px-8 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <section class="max-w-7xl mx-auto px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-      <!-- Nettoyage vitres -->
-      <div class="md:col-span-8 bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10">
-        <div class="flex flex-col md:flex-row h-full">
-          <div class="md:w-1/2 overflow-hidden h-64 md:h-auto">
-            <img alt="Nettoyage de vitres Bruxelles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"/>
-          </div>
-          <div class="md:w-1/2 p-10 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-3 mb-6">
-                <span class="material-symbols-outlined text-primary text-3xl">window</span>
-                <h2 class="font-headline text-2xl font-bold">Nettoyage de vitres</h2>
-              </div>
-              <p class="text-on-surface-variant mb-8 leading-relaxed">Fenêtres, baies vitrées, vérandas et vitrines. Résultat sans traces garanti, intérieur et extérieur.</p>
-              <ul class="space-y-3 mb-10">
-                <li class="flex items-center gap-3 text-sm font-medium">
-                  <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                  Châssis et encadrements inclus
-                </li>
-                <li class="flex items-center gap-3 text-sm font-medium">
-                  <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                  Matériel professionnel hauteur
-                </li>
-              </ul>
-            </div>
-            <div class="flex gap-3">
-              <a href="/services/nettoyage-vitres" class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center">En savoir plus →</a>
-              <a href="/contact" class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all">Devis gratuit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nettoyage canapés -->
-      <div class="md:col-span-4 bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 flex flex-col">
+        <!-- Nettoyage canapés EN PREMIER -->
+        <div class="bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 flex flex-col">
         <div class="h-64 overflow-hidden">
-          <img alt="Nettoyage canapé Bruxelles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80"/>
+            <img alt="Nettoyage canapé Bruxelles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80"/>
         </div>
         <div class="p-10 flex-grow flex flex-col justify-between">
-          <div>
+            <div>
             <div class="flex items-center gap-3 mb-6">
-              <span class="material-symbols-outlined text-primary text-3xl">chair</span>
-              <h2 class="font-headline text-2xl font-bold">Nettoyage de canapés</h2>
+                <span class="material-symbols-outlined text-primary text-3xl">chair</span>
+                <h2 class="font-headline text-2xl font-bold">Nettoyage de canapés</h2>
             </div>
             <p class="text-on-surface-variant mb-8 leading-relaxed">Extraction en profondeur et traitement vapeur pour tous types de tissus. Séchage rapide garanti.</p>
             <ul class="space-y-3 mb-10">
-              <li class="flex items-center gap-3 text-sm font-medium">
+                <li class="flex items-center gap-3 text-sm font-medium">
                 <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
                 Désinfection certifiée éco
-              </li>
-              <li class="flex items-center gap-3 text-sm font-medium">
+                </li>
+                <li class="flex items-center gap-3 text-sm font-medium">
                 <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
                 Technologie anti-taches
-              </li>
+                </li>
             </ul>
-          </div>
-          <div class="flex gap-3">
-            <a href="/services/nettoyage-canape" class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center">En savoir plus →</a>
-            <a href="/contact" class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all">Devis gratuit</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nettoyage après travaux -->
-      <div class="md:col-span-12 bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden group hover:bg-surface-container transition-all duration-500">
-        <div class="grid md:grid-cols-2 items-center">
-          <div class="p-12 md:p-16 order-2 md:order-1">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="material-symbols-outlined text-primary text-4xl">construction</span>
-              <h2 class="font-headline text-3xl font-extrabold tracking-tight">Nettoyage après travaux</h2>
-            </div>
-            <p class="text-on-surface-variant mb-10 text-lg leading-relaxed max-w-xl">Remise en état complète après chantier ou rénovation. Évacuation des poussières, nettoyage des surfaces, locaux prêts à l'usage.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-              <div class="bg-surface-container-high/40 p-4 rounded-lg border border-outline-variant/5">
-                <h4 class="font-bold text-primary mb-2">Dépoussiérage HEPA</h4>
-                <p class="text-xs text-on-surface-variant">Filtration industrielle pour une qualité d'air optimale.</p>
-              </div>
-              <div class="bg-surface-container-high/40 p-4 rounded-lg border border-outline-variant/5">
-                <h4 class="font-bold text-primary mb-2">Finition détaillée</h4>
-                <p class="text-xs text-on-surface-variant">Polissage de toutes les surfaces, prises et interrupteurs.</p>
-              </div>
-            </div>
-            <div class="flex gap-3 flex-wrap">
-              <a href="/services/nettoyage-apres-travaux" class="border border-outline-variant/30 px-8 py-4 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm">En savoir plus →</a>
-              <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-bold transition-all hover:bg-primary-container">Devis gratuit</a>
-            </div>
-          </div>
-          <div class="h-full min-h-[400px] relative order-1 md:order-2 overflow-hidden">
-            <img alt="Nettoyage après chantier Bruxelles" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"/>
-            <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest to-transparent md:block hidden"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nettoyage bureaux -->
-      <div class="md:col-span-12 bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10">
-        <div class="flex flex-col md:flex-row h-full">
-          <div class="md:w-1/2 overflow-hidden h-64 md:h-auto">
-            <img alt="Nettoyage bureaux Bruxelles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"/>
-          </div>
-          <div class="md:w-1/2 p-10 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-3 mb-6">
-                <span class="material-symbols-outlined text-primary text-3xl">business</span>
-                <h2 class="font-headline text-2xl font-bold">Nettoyage de bureaux</h2>
-              </div>
-              <p class="text-on-surface-variant mb-8 leading-relaxed">Locaux professionnels, open spaces, salles de réunion. Interventions régulières ou ponctuelles selon vos besoins.</p>
-              <ul class="space-y-3 mb-10">
-                <li class="flex items-center gap-3 text-sm font-medium">
-                  <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                  Contrats réguliers disponibles
-                </li>
-                <li class="flex items-center gap-3 text-sm font-medium">
-                  <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                  Intervention hors heures de bureau
-                </li>
-              </ul>
             </div>
             <div class="flex gap-3">
-              <a href="/services/nettoyage-bureau" class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center">En savoir plus →</a>
-              <a href="/contact" class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all">Devis gratuit</a>
+            <a href="/services/nettoyage-canape" class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center">En savoir plus →</a>
+            <a href="/contact" class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all">Devis gratuit</a>
             </div>
-          </div>
         </div>
-      </div>
+        </div>
+
+        <!-- Nettoyage vitres EN SECOND -->
+        <div class="bg-surface-container rounded-xl overflow-hidden group hover:bg-surface-container-high transition-all duration-500 border border-outline-variant/10 flex flex-col">
+        <div class="h-64 overflow-hidden">
+            <img alt="Nettoyage de vitres Bruxelles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"/>
+        </div>
+        <div class="p-10 flex-grow flex flex-col justify-between">
+            <div>
+            <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-primary text-3xl">window</span>
+                <h2 class="font-headline text-2xl font-bold">Nettoyage de vitres</h2>
+            </div>
+            <p class="text-on-surface-variant mb-8 leading-relaxed">Fenêtres, baies vitrées, vérandas et vitrines. Résultat sans traces garanti, intérieur et extérieur.</p>
+            <ul class="space-y-3 mb-10">
+                <li class="flex items-center gap-3 text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Châssis et encadrements inclus
+                </li>
+                <li class="flex items-center gap-3 text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Matériel professionnel hauteur
+                </li>
+            </ul>
+            </div>
+            <div class="flex gap-3">
+            <a href="/services/nettoyage-vitres" class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center">En savoir plus →</a>
+            <a href="/contact" class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all">Devis gratuit</a>
+            </div>
+        </div>
+        </div>
 
     </div>
-  </section>
+    </section>
 
   <!-- CTA -->
   <section class="max-w-7xl mx-auto px-8 py-32 text-center">
