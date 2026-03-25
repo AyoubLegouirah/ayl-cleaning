@@ -22,7 +22,7 @@ const { service, commune } = Astro.props;
 <head>
   <Head
     title={`${service.nom} à ${commune.nom} — AYL Cleaning`}
-    description={`AYL Cleaning — ${service.nom} professionnel à ${commune.nom}. ${commune.descriptionService} Devis gratuit en 24h — 0488 33 89 52.`}
+    description={`AYL Cleaning — ${service.nom} professionnel à ${commune.nom}. ${service.descriptionLongue.slice(0, 120)}... Devis gratuit en 24h — 0488 33 89 52.`}
   />
 </head>
 <body class="bg-surface text-on-surface font-body">
@@ -47,7 +47,7 @@ const { service, commune } = Astro.props;
       <span class="text-primary">à {commune.nom}</span>
     </h1>
     <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
-      AYL Cleaning intervient à {commune.nom} pour le {service.nom.toLowerCase()}. {commune.descriptionService} Devis gratuit sous 24h, résultats garantis.
+      {service.descriptionLongue} AYL Cleaning intervient à {commune.nom} et ses environs. Devis gratuit sous 24h, résultats garantis.
     </p>
     <div class="flex gap-4 flex-wrap">
       <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
@@ -62,46 +62,68 @@ const { service, commune } = Astro.props;
     </div>
   </section>
 
-  <!-- CONTEXTE LOCAL -->
+  <!-- CONTEXTE LOCAL + CE QU'ON TRAITE -->
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
       <div>
         <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
-          {service.nom} à <span class="text-primary">{commune.nom}</span> — ce qu'il faut savoir
+          {service.nom} à <span class="text-primary">{commune.nom}</span>
         </h2>
-        <p class="text-on-surface-variant leading-relaxed mb-6">{commune.description}</p>
+        <p class="text-on-surface-variant leading-relaxed mb-4">{commune.description}</p>
+        <p class="text-on-surface-variant leading-relaxed mb-6">{commune.descriptionService}</p>
         <div class="bg-surface-container rounded-xl p-6 border border-primary/20">
           <span class="material-symbols-outlined text-primary text-2xl mb-3 block">lightbulb</span>
           <p class="text-on-surface-variant text-sm leading-relaxed italic">{commune.anecdote}</p>
         </div>
       </div>
       <div class="space-y-4">
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
-          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-xl">location_on</span>
-            Quartiers couverts à {commune.nom}
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            {commune.quartiers.map(q => (
-              <span class="bg-surface-container-high text-on-surface-variant text-xs px-3 py-1 rounded-full">{q}</span>
-            ))}
+        <h3 class="font-headline font-bold text-xl mb-4">Ce qu'on traite à {commune.nom} :</h3>
+        {service.ceTreat.map(item => (
+          <div class="flex items-center gap-4 bg-surface-container rounded-xl px-6 py-4 border border-[#414751]/10">
+            <span class="material-symbols-outlined text-primary">{item.icon}</span>
+            <span class="text-on-surface-variant text-sm">{item.label}</span>
           </div>
-        </div>
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
-          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-xl">home</span>
-            Types de logements
-          </h3>
-          <p class="text-on-surface-variant text-sm">{commune.typesLogements}</p>
-        </div>
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
-          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-xl">group</span>
-            Notre clientèle à {commune.nom}
-          </h3>
-          <p class="text-on-surface-variant text-sm">{commune.clientele}</p>
-        </div>
+        ))}
       </div>
+    </div>
+  </section>
+
+  <!-- TECHNIQUE -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter text-center">
+      Notre technique à <span class="text-primary">{commune.nom}</span>
+    </h2>
+    <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-12">
+      Les mêmes produits et méthodes professionnels qu'on utilise partout à Bruxelles — appliqués directement chez vous à {commune.nom}.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {service.traitement.map(item => (
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Tarifs — <span class="text-primary">{service.nom} à {commune.nom}</span>
+      </h2>
+      <p class="text-on-surface-variant mb-10">Prix indicatifs. Devis gratuit et personnalisé sur demande.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {service.tarifs.map(item => (
+          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10 flex flex-col gap-3">
+            <h3 class="font-headline font-bold text-lg">{item.label}</h3>
+            <p class="text-primary font-headline font-extrabold text-3xl">{item.price}</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-on-surface-variant/60 text-xs mt-6">* Prix indicatifs. Déplacement gratuit à {commune.nom} et dans un rayon de 20km autour de Bruxelles.</p>
     </div>
   </section>
 
@@ -124,7 +146,7 @@ const { service, commune } = Astro.props;
       <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
         <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
         <h3 class="font-headline font-bold text-lg mb-3">Produits écologiques</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">Produits professionnels sans danger pour votre famille et vos animaux.</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Nettoyants biodégradables sans danger pour votre famille et vos animaux.</p>
       </div>
     </div>
   </section>
