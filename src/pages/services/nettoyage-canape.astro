@@ -9,7 +9,7 @@ import Head from '../../components/Head.astro';
 <head>
   <Head
     title="Nettoyage de canapé à Bruxelles — AYL Cleaning"
-    description="Nettoyage professionnel de canapés à Bruxelles. Extraction en profondeur, séchage rapide, produits écologiques. Intervention chez vous 7j/7. Devis gratuit en 24h — 0488 33 89 52."
+    description="Nettoyage professionnel de canapés à Bruxelles. Détachage, désinfection, traitement anti-acariens. Produits écologiques, séchage rapide. Intervention 7j/7. Devis gratuit — 0488 33 89 52."
   />
 </head>
 <body class="bg-surface text-on-surface font-body">
@@ -28,7 +28,7 @@ import Head from '../../components/Head.astro';
       <span class="text-primary">à Bruxelles</span>
     </h1>
     <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
-      Votre canapé accumule poussières, acariens, taches et odeurs au fil du temps. AYL Cleaning intervient à domicile à Bruxelles et communes environnantes pour un nettoyage en profondeur, avec séchage rapide et résultat garanti.
+      Votre canapé accumule poussières, acariens, taches et mauvaises odeurs au fil du temps. AYL Cleaning intervient à domicile à Bruxelles pour un lavage en profondeur des textiles et rembourrages — détachage, désinfection et traitement anti-acariens inclus.
     </p>
     <div class="flex gap-4 flex-wrap">
       <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
@@ -60,13 +60,13 @@ import Head from '../../components/Head.astro';
         <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
           <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
           <h3 class="font-headline font-bold text-lg mb-3">Produits écologiques</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Produits professionnels sans danger pour vos enfants et vos animaux de compagnie.</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Nettoyants professionnels biodégradables, sans danger pour vos enfants et animaux.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTENU SEO — Ce qu'on nettoie -->
+  <!-- CONTENU SEO — Pourquoi -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
       <div>
@@ -74,24 +74,24 @@ import Head from '../../components/Head.astro';
           Pourquoi faire nettoyer<br/><span class="text-primary">votre canapé ?</span>
         </h2>
         <p class="text-on-surface-variant leading-relaxed mb-4">
-          Un canapé utilisé quotidiennement accumule en moyenne <strong class="text-on-surface">des millions d'acariens</strong>, des allergènes, des odeurs de transpiration et des taches difficiles à éliminer avec un simple aspirateur.
+          Un canapé utilisé quotidiennement accumule en moyenne <strong class="text-on-surface">des millions d'acariens</strong>, des allergènes, des salissures et des odeurs de transpiration. Un simple aspirateur ne suffit pas — il faut un lavage en profondeur des fibres textiles et des rembourrages.
         </p>
         <p class="text-on-surface-variant leading-relaxed mb-4">
-          Le nettoyage professionnel va en profondeur dans les fibres du tissu, là où les produits ménagers ne pénètrent pas. Résultat : un canapé propre, désinfecté et qui retrouve ses couleurs d'origine.
+          Notre prestation de nettoyage comprend un <strong class="text-on-surface">détachage ciblé</strong> des taches tenaces (vin, café, urine, sang, graisses), un traitement nettoyant appliqué en profondeur dans les fibres, puis une extraction à faible humidité pour un séchage rapide. Les textiles — tissu, microfibre, velours, moquette — retrouvent leur propreté et leur éclat d'origine.
         </p>
         <p class="text-on-surface-variant leading-relaxed">
-          Nous recommandons un nettoyage tous les 12 à 18 mois pour les foyers avec enfants ou animaux, et tous les 2 ans pour les autres.
+          Nous recommandons un lavage tous les 12 à 18 mois pour les foyers avec enfants ou animaux, et tous les 2 ans pour les autres. Un entretien régulier prolonge la durée de vie de vos sièges et élimine les mauvaises odeurs durablement.
         </p>
       </div>
       <div class="space-y-4">
         <h3 class="font-headline font-bold text-xl mb-4">Ce qu'on traite :</h3>
         {[
-          { icon: "chair", label: "Canapés tissu, microfibre, velours" },
-          { icon: "weekend", label: "Canapés cuir et similicuir" },
-          { icon: "event_seat", label: "Fauteuils et poufs" },
-          { icon: "airline_seat_recline_normal", label: "Sièges de bureau et chaises" },
-          { icon: "bed", label: "Têtes de lit et matelas" },
-          { icon: "local_laundry_service", label: "Taches tenaces (vin, café, urine, sang)" },
+          { icon: "chair", label: "Canapés tissu, microfibre, velours, moquette" },
+          { icon: "weekend", label: "Canapés cuir, similicuir et tissus synthétiques" },
+          { icon: "event_seat", label: "Fauteuils, poufs et méridienne" },
+          { icon: "airline_seat_recline_normal", label: "Sièges de bureau, chaises et banquettes" },
+          { icon: "bed", label: "Têtes de lit, matelas et sommiers" },
+          { icon: "local_laundry_service", label: "Taches tenaces : vin, café, urine, sang, graisses" },
         ].map(item => (
           <div class="flex items-center gap-4 bg-surface-container rounded-xl px-6 py-4 border border-[#414751]/10">
             <span class="material-symbols-outlined text-primary">{item.icon}</span>
@@ -102,8 +102,48 @@ import Head from '../../components/Head.astro';
     </div>
   </section>
 
-  <!-- PROCESSUS -->
+  <!-- TECHNIQUE & PRODUITS -->
   <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter text-center">
+        Notre technique de <span class="text-primary">nettoyage textile</span>
+      </h2>
+      <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-12">Des produits professionnels et une méthode éprouvée pour un résultat durable.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: "science",
+            title: "Nettoyants enzymatiques",
+            desc: "Nos détergents professionnels à base d'enzymes dissolvent les salissures organiques (urine, sang, graisses) sans abîmer les fibres textiles ni laisser de résidus."
+          },
+          {
+            icon: "water_drop",
+            title: "Extraction à faible humidité",
+            desc: "Notre machine injecte une fine brume de nettoyant dans les fibres puis aspire immédiatement la saleté et l'humidité. Séchage en 2 à 4 heures."
+          },
+          {
+            icon: "sanitizer",
+            title: "Désinfection & anti-acariens",
+            desc: "Après le lavage, on applique un spray désinfectant qui élimine les bactéries, acariens et allergènes. Idéal pour les personnes asthmatiques."
+          },
+          {
+            icon: "eco",
+            title: "Produits biodégradables",
+            desc: "Tous nos nettoyants sont homologués, biodégradables et sans solvants toxiques. Sans danger pour les enfants, animaux et personnes allergiques."
+          },
+        ].map(item => (
+          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-headline font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter text-center">
         Comment se passe <span class="text-primary">l'intervention ?</span>
@@ -112,8 +152,8 @@ import Head from '../../components/Head.astro';
         {[
           { step: "01", icon: "phone_in_talk", title: "Devis gratuit", desc: "Contactez-nous par téléphone ou WhatsApp. Réponse sous 24h avec un prix fixe, sans surprise." },
           { step: "02", icon: "calendar_month", title: "Rendez-vous", desc: "On fixe un créneau à votre convenance, en semaine ou le week-end, de 9h à 17h." },
-          { step: "03", icon: "cleaning_services", title: "Nettoyage à domicile", desc: "Notre technicien se déplace chez vous avec tout le matériel. Durée : 45 min à 1h30 selon la taille." },
-          { step: "04", icon: "check_circle", title: "Résultat immédiat", desc: "Votre canapé est propre, désinfecté et sec en 2 à 4 heures. Résultat visible immédiatement." },
+          { step: "03", icon: "cleaning_services", title: "Lavage à domicile", desc: "Notre technicien se déplace avec tout le matériel. Détachage, lavage et désinfection en 45 min à 1h30." },
+          { step: "04", icon: "check_circle", title: "Résultat immédiat", desc: "Canapé propre, désinfecté, sans mauvaises odeurs. Sec en 2 à 4 heures, réutilisable le jour même." },
         ].map(item => (
           <div class="relative bg-surface-container rounded-xl p-8 border border-[#414751]/10">
             <span class="text-primary/20 font-headline font-extrabold text-6xl absolute top-4 right-6">{item.step}</span>
@@ -127,29 +167,31 @@ import Head from '../../components/Head.astro';
   </section>
 
   <!-- TARIFS -->
-  <section class="py-24 px-8 max-w-7xl mx-auto">
-    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Tarifs indicatifs —<span class="text-primary"> Nettoyage canapé</span>
-    </h2>
-    <p class="text-on-surface-variant mb-10">Prix indicatifs pour Bruxelles et communes. Devis gratuit et personnalisé sur demande.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        { label: "Canapé 2 places", price: "60–80€", desc: "Tissu ou microfibre, nettoyage complet coussinets inclus" },
-        { label: "Canapé 3 places", price: "80–110€", desc: "Tissu, velours ou similicuir, traitement anti-acariens inclus" },
-        { label: "Canapé d'angle", price: "120–160€", desc: "Grand format, méridienne incluse, séchage rapide garanti" },
-      ].map(item => (
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10 flex flex-col gap-3">
-          <h3 class="font-headline font-bold text-lg">{item.label}</h3>
-          <p class="text-primary font-headline font-extrabold text-3xl">{item.price}</p>
-          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
-        </div>
-      ))}
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Tarifs indicatifs —<span class="text-primary"> Nettoyage canapé</span>
+      </h2>
+      <p class="text-on-surface-variant mb-10">Prix indicatifs pour Bruxelles et communes. Devis gratuit et personnalisé sur demande.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { label: "Canapé 2 places", price: "60–80€", desc: "Tissu ou microfibre, lavage complet, détachage et désinfection inclus" },
+          { label: "Canapé 3 places", price: "80–110€", desc: "Tissu, velours ou similicuir, traitement anti-acariens et désodorisation inclus" },
+          { label: "Canapé d'angle", price: "120–160€", desc: "Grand format, méridienne incluse, détachage taches tenaces, séchage rapide garanti" },
+        ].map(item => (
+          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10 flex flex-col gap-3">
+            <h3 class="font-headline font-bold text-lg">{item.label}</h3>
+            <p class="text-primary font-headline font-extrabold text-3xl">{item.price}</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-on-surface-variant/60 text-xs mt-6">* Prix indicatifs hors déplacement. Tarif exact confirmé après évaluation. Déplacement gratuit dans un rayon de 20km autour de Bruxelles.</p>
     </div>
-    <p class="text-on-surface-variant/60 text-xs mt-6">* Prix indicatifs hors déplacement. Tarif exact confirmé après évaluation. Déplacement gratuit dans un rayon de 20km autour de Bruxelles.</p>
   </section>
 
   <!-- FAQ -->
-  <section class="bg-surface-container-low py-24 px-8">
+  <section class="py-24 px-8">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter">
         Questions fréquentes —<span class="text-primary"> Nettoyage canapé</span>
@@ -158,25 +200,29 @@ import Head from '../../components/Head.astro';
         {[
           {
             q: "Combien de temps faut-il pour que le canapé sèche ?",
-            a: "Entre 2 et 4 heures selon le tissu et la ventilation de la pièce. Nous utilisons une technique à faible humidité qui accélère le séchage. Vous pouvez réutiliser votre canapé le jour même."
+            a: "Entre 2 et 4 heures selon le tissu et la ventilation de la pièce. Notre technique d'extraction à faible humidité injecte très peu d'eau dans les fibres et aspire immédiatement. Vous pouvez réutiliser votre canapé le jour même."
+          },
+          {
+            q: "Quels types de taches pouvez-vous éliminer ?",
+            a: "Nous traitons toutes les salissures courantes : taches de vin, café, thé, urine (enfants et animaux), sang, graisses alimentaires et odeurs tenaces. Nous utilisons des nettoyants enzymatiques spécialisés qui dissolvent les taches en profondeur sans abîmer les textiles."
           },
           {
             q: "Vous vous déplacez à domicile à Bruxelles ?",
-            a: "Oui, nous intervenons exclusivement à domicile dans toutes les communes de Bruxelles (Anderlecht, Ixelles, Uccle, Schaerbeek, Etterbeek, Forest, Molenbeek, Saint-Gilles, Laeken…) et dans un rayon de 20km autour de Bruxelles."
+            a: "Oui, nous intervenons exclusivement à domicile dans toutes les communes de Bruxelles (Anderlecht, Ixelles, Uccle, Schaerbeek, Etterbeek, Forest, Molenbeek, Saint-Gilles, Laeken…) et dans un rayon de 20km."
           },
           {
             q: "Les produits utilisés sont-ils sans danger pour mes enfants et animaux ?",
-            a: "Absolument. Nous utilisons uniquement des produits professionnels homologués, biodégradables et sans résidus toxiques. Votre famille peut utiliser le canapé dès qu'il est sec."
+            a: "Absolument. Tous nos nettoyants sont homologués, biodégradables et sans solvants toxiques. Ils ne laissent aucun résidu chimique dans les fibres. Votre famille peut utiliser le canapé dès qu'il est sec."
           },
           {
-            q: "Pouvez-vous éliminer les taches d'urine ou d'animaux ?",
-            a: "Oui, nous traitons les taches d'urine, de sang, de café, de vin et les odeurs d'animaux avec des produits enzymatiques spécialisés. Mentionnez-le lors de votre demande de devis pour qu'on adapte le traitement."
+            q: "Faut-il préparer quoi que ce soit avant l'intervention ?",
+            a: "Non, notre technicien arrive avec tout le matériel nécessaire. Il suffit de dégager les coussins du canapé si possible. La prestation dure entre 45 minutes et 1h30 selon la taille du canapé et le nombre de taches à traiter."
           },
           {
             q: "Comment obtenir un devis ?",
             a: "Appelez-nous au 0488 33 89 52 ou envoyez-nous un message WhatsApp avec une photo de votre canapé. Nous vous répondons sous 24h avec un prix fixe et sans surprise."
           },
-        ].map((item, i) => (
+        ].map((item) => (
           <details class="bg-surface-container rounded-xl border border-[#414751]/10 group">
             <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
               <span>{item.q}</span>
@@ -190,28 +236,30 @@ import Head from '../../components/Head.astro';
   </section>
 
   <!-- ZONES -->
-  <section class="py-24 px-8 max-w-7xl mx-auto">
-    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Zones d'intervention — <span class="text-primary">Canapé Bruxelles</span>
-    </h2>
-    <p class="text-on-surface-variant mb-8">Nous intervenons dans toutes les communes de Bruxelles :</p>
-    <div class="flex flex-wrap gap-3">
-      {[
-        { slug: 'bruxelles', label: 'Bruxelles' },
-        { slug: 'anderlecht', label: 'Anderlecht' },
-        { slug: 'ixelles', label: 'Ixelles' },
-        { slug: 'uccle', label: 'Uccle' },
-        { slug: 'etterbeek', label: 'Etterbeek' },
-        { slug: 'forest', label: 'Forest' },
-        { slug: 'schaerbeek', label: 'Schaerbeek' },
-        { slug: 'molenbeek', label: 'Molenbeek' },
-        { slug: 'saint-gilles', label: 'Saint-Gilles' },
-        { slug: 'laeken', label: 'Laeken' },
-      ].map(c => (
-        <a href={`/zones/${c.slug}/nettoyage-canape`} class="bg-surface-container border border-[#414751]/10 px-4 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition-all">
-          📍 {c.label}
-        </a>
-      ))}
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Zones d'intervention — <span class="text-primary">Canapé Bruxelles</span>
+      </h2>
+      <p class="text-on-surface-variant mb-8">Nous intervenons dans toutes les communes de Bruxelles :</p>
+      <div class="flex flex-wrap gap-3">
+        {[
+          { slug: 'bruxelles', label: 'Bruxelles' },
+          { slug: 'anderlecht', label: 'Anderlecht' },
+          { slug: 'ixelles', label: 'Ixelles' },
+          { slug: 'uccle', label: 'Uccle' },
+          { slug: 'etterbeek', label: 'Etterbeek' },
+          { slug: 'forest', label: 'Forest' },
+          { slug: 'schaerbeek', label: 'Schaerbeek' },
+          { slug: 'molenbeek', label: 'Molenbeek' },
+          { slug: 'saint-gilles', label: 'Saint-Gilles' },
+          { slug: 'laeken', label: 'Laeken' },
+        ].map(c => (
+          <a href={`/zones/${c.slug}/nettoyage-canape`} class="bg-surface-container border border-[#414751]/10 px-4 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition-all">
+            📍 {c.label}
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -219,10 +267,10 @@ import Head from '../../components/Head.astro';
   <section class="py-24 px-8">
     <div class="max-w-4xl mx-auto bg-gradient-to-br from-surface-container to-surface-container-low rounded-3xl p-16 text-center border border-[#414751]/10">
       <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 tracking-tighter">
-        Votre canapé mérite<br/><span class="text-primary">un nettoyage professionnel</span>
+        Votre canapé mérite<br/><span class="text-primary">un lavage professionnel</span>
       </h2>
       <p class="text-on-surface-variant text-lg mb-10 max-w-xl mx-auto">
-        Devis gratuit en 24h. Intervention à domicile à Bruxelles 7j/7. Résultat garanti ou on revient sans frais.
+        Détachage, désinfection, traitement anti-acariens. Devis gratuit en 24h. Intervention 7j/7 à Bruxelles.
       </p>
       <div class="flex justify-center gap-4 flex-wrap">
         <a href="/contact" class="bg-primary text-on-primary px-10 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
