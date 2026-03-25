@@ -33,9 +33,9 @@ export const services: Service[] = [
       { icon: "local_laundry_service", label: "Taches : vin, café, urine, sang, graisses" },
     ],
     tarifs: [
-      { label: "Canapé 2 places", price: "60–80€", desc: "Tissu ou microfibre, détachage et désinfection inclus" },
-      { label: "Canapé 3 places", price: "80–110€", desc: "Tissu, velours ou similicuir, traitement anti-acariens inclus" },
-      { label: "Canapé d'angle", price: "120–160€", desc: "Grand format, méridienne incluse, séchage rapide garanti" },
+      { label: "Canapé 2 places", price: "À partir de 60€", desc: "Tissu ou microfibre, détachage et désinfection inclus" },
+      { label: "Canapé 3 places", price: "À partir de 80€", desc: "Tissu, velours ou similicuir, traitement anti-acariens inclus" },
+      { label: "Canapé d'angle", price: "À partir de 120€", desc: "Grand format, méridienne incluse, séchage rapide garanti" },
     ],
   },
   {
@@ -60,8 +60,8 @@ export const services: Service[] = [
       { icon: "cleaning_services", label: "Châssis, rebords et encadrements" },
     ],
     tarifs: [
-      { label: "Appartement", price: "40–70€", desc: "Jusqu'à 8 fenêtres, intérieur et extérieur, châssis inclus" },
-      { label: "Maison", price: "70–120€", desc: "Jusqu'à 15 fenêtres, baies vitrées et portes-fenêtres incluses" },
+      { label: "Appartement", price: "À partir de 40€", desc: "Jusqu'à 8 fenêtres, intérieur et extérieur, châssis inclus" },
+      { label: "Maison", price: "À partir de 70€", desc: "Jusqu'à 15 fenêtres, baies vitrées et portes-fenêtres incluses" },
       { label: "Commerce / Bureau", price: "Sur devis", desc: "Vitrines, cloisons vitrées, contrat mensuel possible" },
     ],
   },
