@@ -190,35 +190,127 @@ import Head from '../../components/Head.astro';
     </div>
   </section>
 
-  <!-- CONSEILS ENTRETIEN -->
+  <!-- GUIDE DES TACHES -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Guide des taches — <span class="text-primary">comment réagir ?</span>
+      </h2>
+      <p class="text-on-surface-variant mb-12 max-w-2xl">
+        Chaque type de tache nécessite un traitement différent. Voici les bons réflexes selon la nature de la salissure — et quand faire appel à un professionnel.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: "wine_bar",
+            titre: "Taches de vin, café, thé",
+            desc: "Réagissez immédiatement : absorbez le maximum avec une serviette propre sèche sans frotter. Versez un peu d'eau froide pour diluer, puis laissez agir un détachant textile quelques minutes avant d'essuyer avec un chiffon propre. Ne chauffez jamais une tache fraîche — la chaleur la fixe dans les fibres. Si la tache est sèche, un nettoyant enzymatique professionnel sera nécessaire."
+          },
+          {
+            icon: "pets",
+            titre: "Taches d'urine et odeurs d'animaux",
+            desc: "Absorbez immédiatement avec du papier absorbant. Évitez l'eau de Javel ou l'ammoniaque qui peuvent abîmer les textiles et attirer à nouveau l'animal. Appliquez un détachant enzymatique spécifique urine, laissez agir 15 minutes puis essuyez avec un chiffon humide et séchez. Pour les odeurs tenaces incrustées dans les rembourrages, seul un lavage professionnel avec extraction sera vraiment efficace."
+          },
+          {
+            icon: "fastfood",
+            titre: "Taches de graisses alimentaires",
+            desc: "Raclez délicatement l'excédent avec un couteau ou une carte. Saupoudrez du sel ou de la fécule pour absorber la graisse, laissez agir 10 minutes puis brossez. Appliquez ensuite un détergent dégraissant dilué dans un litre d'eau tiède avec un chiffon propre. Rincez avec un chiffon humide à l'eau froide. Les textiles lavables peuvent passer en machine à laver à basse température."
+          },
+          {
+            icon: "colorize",
+            titre: "Taches d'encre, feutre, stylo",
+            desc: "Tamponnez avec un chiffon imbibé d'alcool ménager ou d'eau oxygénée — testez d'abord sur une zone cachée pour vérifier que le tissu ne décolore pas. Travaillez de l'extérieur vers le centre de la tache pour éviter de l'étaler. L'alcool agit comme solvant sur l'encre. Pour le cuir et le similicuir, utilisez uniquement des lingettes nettoyantes spéciales cuir ou de la cire adaptée. En cas de doute, appelez un nettoyeur professionnel."
+          },
+          {
+            icon: "water",
+            titre: "Taches d'eau et auréoles",
+            desc: "Paradoxalement, les auréoles d'eau sont parmi les plus difficiles à éliminer seul. Humidifiez uniformément toute la zone avec une éponge propre pour effacer la limite de l'auréole, puis séchez rapidement avec un chiffon sec. Vous pouvez ajouter quelques gouttes de vinaigre blanc dans l'eau pour neutraliser le calcaire. Si l'auréole persiste, un nettoyant textile très efficace appliqué par un professionnel est la seule solution durable."
+          },
+          {
+            icon: "brush",
+            titre: "Taches de boue et terre",
+            desc: "Ne nettoyez surtout pas à l'état humide — la boue fraîche s'incruste dans les fibres si on frotte. Laissez sécher complètement, puis brossez ou aspirez pour enlever la terre sèche. Appliquez ensuite un produit nettoyant textile avec une éponge humide et frottez délicatement dans le sens des fibres. Rincez avec un chiffon propre. Les produits d entretien du commerce suffisent en général pour ce type de salissure."
+          },
+        ].map(item => (
+          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10 flex gap-6 items-start">
+            <span class="material-symbols-outlined text-primary text-3xl shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 bg-surface-container rounded-xl p-8 border border-primary/20">
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          <strong class="text-on-surface">Important :</strong> les produits ménagers courants (savon noir, cristaux de soude, liquide-vaisselle, eau de Javel) peuvent donner des résultats sur les taches fraîches mais risquent d'abîmer les fibres textiles et le rembourrage sur le long terme. Pour un résultat professionnel durable, nos nettoyants enzymatiques biodégradables pénètrent en profondeur sans détériorer vos textiles — contactez AYL Cleaning pour un devis gratuit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNES QUE VOTRE CANAPÉ A BESOIN D'UN PRO -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
     <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Entretien entre deux nettoyages — <span class="text-primary">nos conseils</span>
+      Votre canapé a besoin d'un <span class="text-primary">nettoyage professionnel</span> si…
     </h2>
     <p class="text-on-surface-variant mb-12 max-w-2xl">
-      Entre chaque prestation professionnelle, voici comment entretenir votre canapé au quotidien pour limiter les salissures et prolonger l'effet du lavage.
+      Un canapé peut sembler propre en surface et pourtant abriter des milliers d'acariens, bactéries et allergènes dans ses fibres. Voici les signes qui ne trompent pas.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">cleaning_services</span>
-        <h3 class="font-headline font-bold text-lg mb-3">Traiter une tache rapidement</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          En cas de tache fraîche, tamponnez avec un chiffon propre sec — ne frottez jamais. Vous pouvez diluer un peu de savon de Marseille dans de l'eau tiède et appliquer délicatement avec une éponge propre, puis rincer avec un chiffon humide et sécher à l'air. Évitez les produits chimiques agressifs comme la Javel ou le bicarbonate de soude pur qui peuvent décolorer les textiles.
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "sick", titre: "Allergies ou irritations", desc: "Vous éternuez, vos yeux piquent ou votre peau réagit après avoir été assis sur le canapé ? Ce sont les acariens et allergènes logés dans les fibres textiles qui en sont probablement la cause." },
+        { icon: "sentiment_dissatisfied", titre: "Mauvaises odeurs persistantes", desc: "Une odeur de transpiration, de tabac, d'urine ou d'animaux qui revient malgré l'aération ? Les molécules odorantes sont piégées dans les rembourrages — seul un lavage en profondeur les élimine vraiment." },
+        { icon: "opacity", titre: "Taches tenaces incrustées", desc: "Du café, du vin, de la sauce ou de l'urine séchée qui résiste à tous vos produits ménagers ? Les taches incrustées dans les fibres nécessitent un détachant professionnel et une extraction puissante." },
+        { icon: "pets", titre: "Présence d'animaux ou d'enfants", desc: "Les foyers avec animaux ou jeunes enfants accumulent poils, salissures et bactéries bien plus vite. Un nettoyage et une désinfection réguliers sont indispensables pour un environnement sain." },
+        { icon: "palette", titre: "Couleurs ternes et tissu terne", desc: "Votre canapé a perdu son éclat d'origine ? Les fibres textiles encrassées par la poussière et les salissures donnent un aspect vieilli. Un lavage professionnel ravive les couleurs et redonne vie au tissu." },
+        { icon: "calendar_month", titre: "Plus de 12 mois sans nettoyage", desc: "Même sans taches visibles, un canapé utilisé quotidiennement accumule en moyenne 100 000 acariens par mètre carré après un an. Un nettoyage annuel est recommandé pour un intérieur sain." },
+      ].map(item => (
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- POURQUOI PAS FAIRE SOI-MÊME -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+          Pourquoi le nettoyage <span class="text-primary">amateur ne suffit pas ?</span>
+        </h2>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Un aspirateur ménager n'aspire que la surface du tissu — il ne pénètre pas dans les fibres ni dans les rembourrages où s'accumulent acariens, bactéries et salissures. Les produits du commerce comme la lessive, le savon ou les détergents ménagers peuvent décolorer les textiles, laisser des résidus collants ou endommager les fibres délicates comme le velours ou la microfibre.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Rincer un canapé à la maison est quasiment impossible — les produits s'incrustent et attirent encore plus de poussière. Sécher un canapé mal rincé favorise le développement de moisissures et d'odeurs encore plus tenaces.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          Notre machine d'extraction professionnelle injecte le nettoyant enzymatique directement dans les fibres, le pulvérise sur les taches, et aspire immédiatement l'eau sale avec toutes les salissures. Résultat : un canapé vraiment propre, sec en 2 à 4 heures, sans résidus ni odeurs.
         </p>
       </div>
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">air</span>
-        <h3 class="font-headline font-bold text-lg mb-3">Éliminer les mauvaises odeurs</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Pour désodoriser un canapé entre deux nettoyages, saupoudrez légèrement du bicarbonate de soude sur les coussins, laissez agir 30 minutes puis aspirez. Vous pouvez aussi utiliser un spray rafraîchissant textile multi-usages. Pour les odeurs tenaces d'animaux ou d'urine, seul un nettoyant enzymatique professionnel appliqué par un nettoyeur donnera un résultat durable.
-        </p>
-      </div>
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">vacuum</span>
-        <h3 class="font-headline font-bold text-lg mb-3">Entretien régulier à domicile</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Aspirez votre canapé une fois par semaine avec la brosse textile de votre aspirateur pour éliminer poussières, poils d'animaux et acariens. Retournez et aérez les coussins régulièrement. Pour les canapés en tissu lavable, vérifiez l'étiquette — certaines housses peuvent passer en machine avec une lessive douce. Pour les textiles délicats (velours, microfibre), faites appel à un professionnel.
-        </p>
+      <div class="space-y-4">
+        {[
+          { label: "Aspirateur ménager", pro: false, desc: "N'atteint pas les fibres en profondeur ni les rembourrages" },
+          { label: "Produits ménagers (lessive, savon)", pro: false, desc: "Risque de décoloration, résidus collants, fibres abîmées" },
+          { label: "Séchage lent et incomplet", pro: false, desc: "Favorise les moisissures et les mauvaises odeurs persistantes" },
+          { label: "Extraction professionnelle AYL", pro: true, desc: "Nettoyage en profondeur, séchage rapide, résultat garanti" },
+          { label: "Nettoyants enzymatiques pro", pro: true, desc: "Dissolvent taches et odeurs sans abîmer les textiles" },
+          { label: "Désinfection & anti-acariens", pro: true, desc: "Élimine bactéries, acariens et allergènes pour un intérieur sain" },
+        ].map(item => (
+          <div class={`flex items-center gap-4 rounded-xl px-6 py-4 border ${item.pro ? 'bg-primary/5 border-primary/20' : 'bg-surface-container border-[#414751]/10'}`}>
+            <span class={`material-symbols-outlined text-xl ${item.pro ? 'text-primary' : 'text-red-400'}`}>
+              {item.pro ? 'check_circle' : 'cancel'}
+            </span>
+            <div>
+              <p class={`text-sm font-bold ${item.pro ? 'text-on-surface' : 'text-on-surface-variant'}`}>{item.label}</p>
+              <p class="text-on-surface-variant text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
