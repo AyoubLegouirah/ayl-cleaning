@@ -2,15 +2,84 @@
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
-const { title, description = "AYL Cleaning — Nettoyage professionnel de vitres, canapés et après travaux à Bruxelles. Devis gratuit en 24h." } = Astro.props;
+const {
+  title,
+  description = "AYL Cleaning — Nettoyage professionnel de canapés et de vitres à Bruxelles. Intervention à domicile 7j/7. Devis gratuit en 24h — 0488 33 89 52.",
+  canonical,
+} = Astro.props;
+
+const siteUrl = "https://ayl-cleaning.vercel.app";
+const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+const fullTitle = `${title} | AYL Cleaning Bruxelles`;
+
+const schemaLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AYL Cleaning",
+  "description": "Nettoyage professionnel de canapés et de vitres à Bruxelles. Intervention à domicile 7j/7.",
+  "url": siteUrl,
+  "telephone": "+32488338952",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bruxelles",
+    "addressRegion": "Bruxelles-Capitale",
+    "addressCountry": "BE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.8503,
+    "longitude": 4.3517
+  },
+  "areaServed": [
+    "Bruxelles", "Anderlecht", "Ixelles", "Uccle", "Etterbeek",
+    "Forest", "Schaerbeek", "Molenbeek", "Saint-Gilles", "Laeken"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "priceRange": "€€",
+  "serviceType": ["Nettoyage de canapés", "Nettoyage de vitres"],
+  "sameAs": ["https://wa.me/32488338952"]
+};
 ---
 
 <meta charset="utf-8"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>{title} | AYL Cleaning Bruxelles</title>
+<title>{fullTitle}</title>
 <meta name="description" content={description}/>
+<link rel="canonical" href={pageUrl}/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content={fullTitle}/>
+<meta property="og:description" content={description}/>
+<meta property="og:url" content={pageUrl}/>
+<meta property="og:site_name" content="AYL Cleaning"/>
+<meta property="og:locale" content="fr_BE"/>
+<meta property="og:image" content="https://ayl-cleaning.vercel.app/logo.png"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content={fullTitle}/>
+<meta name="twitter:description" content={description}/>
+<meta name="twitter:image" content="https://ayl-cleaning.vercel.app/logo.png"/>
+
+<!-- SEO local -->
+<meta name="geo.region" content="BE-BRU"/>
+<meta name="geo.placename" content="Bruxelles"/>
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaLocalBusiness)}></script>
+
 <script is:inline src="https://cdn.tailwindcss.com/3.4.1"></script>
 <script is:inline>
   tailwind.config = {
