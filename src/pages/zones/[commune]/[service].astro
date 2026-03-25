@@ -8,20 +8,22 @@ import { services } from '../../../data/services';
 export function getStaticPaths() {
   return communes.flatMap((commune) =>
     services.map((service) => ({
-      params: { commune, service: service.slug },
+      params: { commune: commune.slug, service: service.slug },
       props: { service, commune },
     }))
   );
 }
 
 const { service, commune } = Astro.props;
-const communeFormatted = commune.charAt(0).toUpperCase() + commune.slice(1);
 ---
 
 <!DOCTYPE html>
 <html class="dark" lang="fr">
 <head>
-  <Head title={`${service.nom} à ${communeFormatted}`} description={`AYL Cleaning — ${service.nom} professionnel à ${communeFormatted}. ${service.description} Devis gratuit en 24h.`}/>
+  <Head
+    title={`${service.nom} à ${commune.nom} — AYL Cleaning`}
+    description={`AYL Cleaning — ${service.nom} professionnel à ${commune.nom}. ${commune.descriptionService} Devis gratuit en 24h — 0488 33 89 52.`}
+  />
 </head>
 <body class="bg-surface text-on-surface font-body">
 
@@ -32,20 +34,20 @@ const communeFormatted = commune.charAt(0).toUpperCase() + commune.slice(1);
   <!-- HERO -->
   <section class="relative pt-32 pb-20 px-8 max-w-7xl mx-auto">
     <div class="flex items-center gap-2 mb-4">
-      <a href={`/zones/${commune}`} class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">
-        📍 {communeFormatted}
+      <a href={`/zones/${commune.slug}`} class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">
+        📍 {commune.nom}
       </a>
       <span class="text-[#414751]">/</span>
       <a href={`/services/${service.slug}`} class="text-primary text-xs font-bold uppercase tracking-widest hover:underline">
         {service.nom}
       </a>
     </div>
-    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight max-w-3xl mb-8 tracking-tighter">
+    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight max-w-3xl mb-6 tracking-tighter">
       {service.nom}<br/>
-      <span class="text-primary">à {communeFormatted}</span>
+      <span class="text-primary">à {commune.nom}</span>
     </h1>
-    <p class="text-on-surface-variant text-lg max-w-xl leading-relaxed mb-10">
-      AYL Cleaning intervient à {communeFormatted} pour le {service.nom.toLowerCase()}. {service.description} Devis gratuit sous 24h, résultats garantis.
+    <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
+      AYL Cleaning intervient à {commune.nom} pour le {service.nom.toLowerCase()}. {commune.descriptionService} Devis gratuit sous 24h, résultats garantis.
     </p>
     <div class="flex gap-4 flex-wrap">
       <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
@@ -54,58 +56,104 @@ const communeFormatted = commune.charAt(0).toUpperCase() + commune.slice(1);
       <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
         💚 WhatsApp
       </a>
+      <a href="tel:+32488338952" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+        📞 0488 33 89 52
+      </a>
     </div>
   </section>
 
-  <!-- DETAILS -->
+  <!-- CONTEXTE LOCAL -->
   <section class="bg-surface-container-low py-24 px-8">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter">
-        Pourquoi choisir AYL Cleaning à <span class="text-primary">{communeFormatted}</span> ?
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">verified</span>
-          <h3 class="font-headline font-bold text-lg mb-3">Résultats garantis</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Pas satisfait de notre {service.nom.toLowerCase()} à {communeFormatted} ? On revient sans frais.</p>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+          {service.nom} à <span class="text-primary">{commune.nom}</span> — ce qu'il faut savoir
+        </h2>
+        <p class="text-on-surface-variant leading-relaxed mb-6">{commune.description}</p>
+        <div class="bg-surface-container rounded-xl p-6 border border-primary/20">
+          <span class="material-symbols-outlined text-primary text-2xl mb-3 block">lightbulb</span>
+          <p class="text-on-surface-variant text-sm leading-relaxed italic">{commune.anecdote}</p>
         </div>
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">speed</span>
-          <h3 class="font-headline font-bold text-lg mb-3">Intervention rapide</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Disponible 7j/7 à {communeFormatted}. Réponse sous 24h pour tout devis.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+            Quartiers couverts à {commune.nom}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {commune.quartiers.map(q => (
+              <span class="bg-surface-container-high text-on-surface-variant text-xs px-3 py-1 rounded-full">{q}</span>
+            ))}
+          </div>
         </div>
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
-          <h3 class="font-headline font-bold text-lg mb-3">Produits écologiques</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">Produits professionnels sans danger pour votre famille et vos animaux.</p>
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xl">home</span>
+            Types de logements
+          </h3>
+          <p class="text-on-surface-variant text-sm">{commune.typesLogements}</p>
+        </div>
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-xl">group</span>
+            Notre clientèle à {commune.nom}
+          </h3>
+          <p class="text-on-surface-variant text-sm">{commune.clientele}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AUTRES SERVICES -->
+  <!-- GARANTIES -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
-    <h2 class="font-headline text-3xl font-extrabold mb-8 tracking-tighter">
-      Nos autres services à <span class="text-primary">{communeFormatted}</span>
+    <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter">
+      Pourquoi nous choisir à <span class="text-primary">{commune.nom}</span> ?
     </h2>
-    <div class="flex flex-wrap gap-3">
-      {services.map(s => (
-        <a href={`/zones/${commune}/${s.slug}`} class={`px-4 py-2 rounded-full text-sm border transition-all ${s.slug === service.slug ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-[#414751]/10 hover:border-primary hover:text-primary'}`}>
-          {s.icon} {s.nom}
-        </a>
-      ))}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">verified</span>
+        <h3 class="font-headline font-bold text-lg mb-3">Résultat garanti</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Pas satisfait de notre {service.nom.toLowerCase()} à {commune.nom} ? On revient sans frais.</p>
+      </div>
+      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">speed</span>
+        <h3 class="font-headline font-bold text-lg mb-3">Intervention rapide</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Disponible 7j/7 à {commune.nom}. Réponse sous 24h pour tout devis.</p>
+      </div>
+      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
+        <h3 class="font-headline font-bold text-lg mb-3">Produits écologiques</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Produits professionnels sans danger pour votre famille et vos animaux.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES SERVICES -->
+  <section class="bg-surface-container-low py-16 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-2xl font-extrabold mb-6 tracking-tighter">
+        Nos autres services à <span class="text-primary">{commune.nom}</span>
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        {services.map(s => (
+          <a href={`/zones/${commune.slug}/${s.slug}`} class={`px-4 py-2 rounded-full text-sm border transition-all ${s.slug === service.slug ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-[#414751]/10 hover:border-primary hover:text-primary'}`}>
+            {s.icon} {s.nom}
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- AUTRES COMMUNES -->
-  <section class="py-12 px-8 max-w-7xl mx-auto border-t border-[#414751]/10">
-    <h2 class="font-headline text-2xl font-extrabold mb-8 tracking-tighter">
+  <section class="py-16 px-8 max-w-7xl mx-auto border-t border-[#414751]/10">
+    <h2 class="font-headline text-2xl font-extrabold mb-6 tracking-tighter">
       {service.nom} dans d'autres communes
     </h2>
     <div class="flex flex-wrap gap-3">
       {communes.map(c => (
-        <a href={`/zones/${c}/${service.slug}`} class={`px-4 py-2 rounded-full text-sm border transition-all ${c === commune ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-[#414751]/10 hover:border-primary hover:text-primary'}`}>
-          📍 {c.charAt(0).toUpperCase() + c.slice(1)}
+        <a href={`/zones/${c.slug}/${service.slug}`} class={`px-4 py-2 rounded-full text-sm border transition-all ${c.slug === commune.slug ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-[#414751]/10 hover:border-primary hover:text-primary'}`}>
+          📍 {c.nom}
         </a>
       ))}
     </div>
@@ -114,18 +162,21 @@ const communeFormatted = commune.charAt(0).toUpperCase() + commune.slice(1);
   <!-- CTA -->
   <section class="py-24 px-8">
     <div class="max-w-4xl mx-auto bg-gradient-to-br from-surface-container to-surface-container-low rounded-3xl p-16 text-center border border-[#414751]/10">
-      <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-6 tracking-tighter">
-        Besoin d'un <span class="text-primary">{service.nom}</span> à {communeFormatted} ?
+      <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 tracking-tighter">
+        Besoin d'un <span class="text-primary">{service.nom}</span> à {commune.nom} ?
       </h2>
-      <p class="text-on-surface-variant text-lg mb-10">
-        Contactez AYL Cleaning pour un devis gratuit sous 24h.
+      <p class="text-on-surface-variant text-lg mb-10 max-w-xl mx-auto">
+        Devis gratuit en 24h. Intervention à domicile 7j/7. Résultat garanti ou on revient sans frais.
       </p>
       <div class="flex justify-center gap-4 flex-wrap">
         <a href="/contact" class="bg-primary text-on-primary px-10 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
-          Demander un devis
+          Demander un devis gratuit
         </a>
         <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
           💚 WhatsApp
+        </a>
+        <a href="tel:+32488338952" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+          📞 0488 33 89 52
         </a>
       </div>
     </div>
