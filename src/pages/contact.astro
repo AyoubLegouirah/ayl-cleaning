@@ -39,31 +39,31 @@ import Head from '../components/Head.astro';
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
               <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Nom</label>
-              <input class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all outline-none" placeholder="Votre nom" type="text"/>
+              <input id="form-nom" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all outline-none" placeholder="Votre nom" type="text"/>
+              <p id="err-nom" class="hidden text-red-500 text-xs ml-1"></p>
             </div>
             <div class="space-y-2">
               <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Téléphone</label>
-              <input class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all outline-none" placeholder="04XX XX XX XX" type="tel"/>
+              <input id="form-tel" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all outline-none" placeholder="04XX XX XX XX" type="tel"/>
+              <p id="err-tel" class="hidden text-red-500 text-xs ml-1"></p>
             </div>
           </div>
           <div class="space-y-2">
             <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Service souhaité</label>
-            <select class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface transition-all outline-none">
+            <select id="form-service" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface transition-all outline-none">
               <option value="">Choisir un service</option>
               <option>Nettoyage de vitres</option>
               <option>Nettoyage de canapés</option>
-              <option>Nettoyage après travaux</option>
-              <option>Nettoyage de bureaux</option>
               <option>Plusieurs services</option>
             </select>
           </div>
           <div class="space-y-2">
             <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Message</label>
-            <textarea class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all resize-none outline-none" placeholder="Décrivez votre besoin, surface approximative, commune..." rows="5"></textarea>
+            <textarea id="form-message" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all resize-none outline-none" placeholder="Décrivez votre besoin, surface approximative, commune..." rows="5"></textarea>
           </div>
-          <a href="https://wa.me/32488338952" target="_blank" class="inline-block w-full md:w-auto bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-10 py-4 rounded-full font-headline font-extrabold uppercase tracking-tighter text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200 text-center">
+          <button id="form-submit" type="button" class="w-full md:w-auto bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-10 py-4 rounded-full font-headline font-extrabold uppercase tracking-tighter text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200 text-center cursor-pointer">
             Envoyer via WhatsApp
-          </a>
+          </button>
         </form>
       </div>
 
@@ -141,6 +141,46 @@ import Head from '../components/Head.astro';
 </main>
 
 <Footer/>
+
+<script is:inline>
+  document.getElementById('form-submit').addEventListener('click', function () {
+    const nom = document.getElementById('form-nom').value.trim();
+    const tel = document.getElementById('form-tel').value.trim();
+    const service = document.getElementById('form-service').value;
+    const message = document.getElementById('form-message').value.trim();
+
+    const errNom = document.getElementById('err-nom');
+    const errTel = document.getElementById('err-tel');
+    let valid = true;
+
+    if (!nom) {
+      errNom.textContent = 'Veuillez entrer votre nom.';
+      errNom.classList.remove('hidden');
+      valid = false;
+    } else {
+      errNom.classList.add('hidden');
+    }
+
+    if (!tel) {
+      errTel.textContent = 'Veuillez entrer votre numéro de téléphone.';
+      errTel.classList.remove('hidden');
+      valid = false;
+    } else {
+      errTel.classList.add('hidden');
+    }
+
+    if (!valid) return;
+
+    const text =
+      'Bonjour AYL Cleaning 👋\n\n' +
+      'Nom : ' + nom + '\n' +
+      'Téléphone : ' + tel + '\n' +
+      'Service : ' + (service || 'Non précisé') + '\n\n' +
+      'Message : ' + (message || 'Aucun message');
+
+    window.open('https://wa.me/32488338952?text=' + encodeURIComponent(text), '_blank');
+  });
+</script>
 
 </body>
 </html>
