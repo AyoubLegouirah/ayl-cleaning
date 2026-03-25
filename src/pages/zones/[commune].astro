@@ -16,7 +16,7 @@ const { commune } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html class="dark" lang="fr">
+<html lang="fr">
 <head>
   <Head
     title={`Nettoyage professionnel à ${commune.nom} — AYL Cleaning`}
@@ -42,13 +42,13 @@ const { commune } = Astro.props;
       {commune.descriptionService} Devis gratuit sous 24h, résultats garantis.
     </p>
     <div class="flex gap-4 flex-wrap">
-      <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
+      <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
         Devis gratuit
       </a>
-      <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+      <a href="https://wa.me/32488338952" target="_blank" class="bg-surface-container text-on-surface px-8 py-4 rounded-full font-headline font-bold hover:bg-surface-container-highest transition-all duration-200">
         💚 WhatsApp
       </a>
-      <a href="tel:+32488338952" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+      <a href="tel:+32488338952" class="bg-surface-container text-on-surface px-8 py-4 rounded-full font-headline font-bold hover:bg-surface-container-highest transition-all duration-200">
         📞 +32 488 33 89 52
       </a>
     </div>
@@ -62,13 +62,13 @@ const { commune } = Astro.props;
           AYL Cleaning à <span class="text-primary">{commune.nom}</span>
         </h2>
         <p class="text-on-surface-variant leading-relaxed mb-6">{commune.description}</p>
-        <div class="bg-surface-container rounded-xl p-6 border border-primary/20">
+        <div class="bg-primary/5 rounded-xl p-6">
           <span class="material-symbols-outlined text-primary text-2xl mb-3 block">lightbulb</span>
           <p class="text-on-surface-variant text-sm leading-relaxed italic">{commune.anecdote}</p>
         </div>
       </div>
       <div class="space-y-6">
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
           <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-xl">location_on</span>
             Quartiers couverts
@@ -79,14 +79,14 @@ const { commune } = Astro.props;
             ))}
           </div>
         </div>
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
           <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-xl">home</span>
             Types de logements
           </h3>
           <p class="text-on-surface-variant text-sm">{commune.typesLogements}</p>
         </div>
-        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
           <h3 class="font-headline font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary text-xl">group</span>
             Notre clientèle à {commune.nom}
@@ -105,7 +105,7 @@ const { commune } = Astro.props;
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {services.map(service => (
-        <a href={`/zones/${commune.slug}/${service.slug}`} class="group bg-surface-container rounded-xl p-8 border border-[#414751]/10 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 flex gap-6 items-start">
+        <a href={`/zones/${commune.slug}/${service.slug}`} class="group bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)] hover:shadow-[0_8px_48px_rgba(26,28,30,0.08)] transition-all duration-300 hover:-translate-y-1 flex gap-6 items-start">
           <div class="text-4xl">{service.icon}</div>
           <div>
             <h3 class="font-headline text-lg font-bold text-on-surface mb-2">{service.nom} à {commune.nom}</h3>
@@ -124,17 +124,17 @@ const { commune } = Astro.props;
         Pourquoi choisir AYL Cleaning à <span class="text-primary">{commune.nom}</span> ?
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
           <span class="material-symbols-outlined text-primary text-3xl mb-4 block">speed</span>
           <h3 class="font-headline font-bold text-lg mb-3">Intervention rapide</h3>
           <p class="text-on-surface-variant text-sm leading-relaxed">Nous connaissons bien {commune.nom} et ses accès. Disponible 7j/7 de 9h à 17h.</p>
         </div>
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
           <span class="material-symbols-outlined text-primary text-3xl mb-4 block">verified</span>
           <h3 class="font-headline font-bold text-lg mb-3">Résultats garantis</h3>
           <p class="text-on-surface-variant text-sm leading-relaxed">Pas satisfait de notre intervention à {commune.nom} ? On revient sans frais supplémentaires.</p>
         </div>
-        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
           <span class="material-symbols-outlined text-primary text-3xl mb-4 block">payments</span>
           <h3 class="font-headline font-bold text-lg mb-3">Devis gratuit en 24h</h3>
           <p class="text-on-surface-variant text-sm leading-relaxed">Prix fixe et transparent, sans surprise. Réponse sous 24h pour tous les habitants de {commune.nom}.</p>
@@ -152,7 +152,7 @@ const { commune } = Astro.props;
       AYL Cleaning est une entreprise de nettoyage professionnelle qui intervient à {commune.nom} pour les particuliers et les professionnels. Nos techniciens se déplacent à domicile avec tout le matériel nécessaire pour un résultat impeccable.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+      <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
         <span class="text-3xl mb-4 block">🛋️</span>
         <h3 class="font-headline font-bold text-xl mb-4">Nettoyage de canapés à {commune.nom}</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
@@ -165,7 +165,7 @@ const { commune } = Astro.props;
           <li class="flex items-center gap-2"><span class="text-primary">✓</span> Dès 60€ — devis gratuit sous 24h</li>
         </ul>
       </div>
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+      <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
         <span class="text-3xl mb-4 block">🪟</span>
         <h3 class="font-headline font-bold text-xl mb-4">Lavage de vitres à {commune.nom}</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
@@ -213,7 +213,7 @@ const { commune } = Astro.props;
             desc: "Un nettoyage professionnel complet en 45 minutes à 2 heures selon la prestation. Pas de corvée ménagère, pas de résidus, pas de déception. Nous nous occupons de tout, vous profitez du résultat immédiatement."
           },
         ].map(item => (
-          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
             <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
             <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
             <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
@@ -233,7 +233,7 @@ const { commune } = Astro.props;
       {commune.communesVoisines.map(slug => {
         const voisine = communes.find(c => c.slug === slug);
         return voisine ? (
-          <a href={`/zones/${voisine.slug}`} class="bg-surface-container border border-[#414751]/10 px-4 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition-all">
+          <a href={`/zones/${voisine.slug}`} class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm hover:text-primary hover:bg-surface-container-highest transition-all duration-200 shadow-[0_2px_8px_rgba(26,28,30,0.06)]">
             📍 {voisine.nom}
           </a>
         ) : null;
@@ -243,21 +243,21 @@ const { commune } = Astro.props;
 
   <!-- CTA -->
   <section class="py-24 px-8">
-    <div class="max-w-4xl mx-auto bg-gradient-to-br from-surface-container to-surface-container-low rounded-3xl p-16 text-center border border-[#414751]/10">
-      <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 tracking-tighter">
-        Besoin d'un nettoyage à <span class="text-primary">{commune.nom}</span> ?
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-[#004d7a] rounded-3xl p-16 text-center shadow-[0_8px_48px_rgba(0,99,155,0.18)]">
+      <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 tracking-tighter text-on-primary">
+        Besoin d'un nettoyage à <span class="opacity-80">{commune.nom}</span> ?
       </h2>
-      <p class="text-on-surface-variant text-lg mb-10 max-w-xl mx-auto">
+      <p class="text-on-primary/70 text-lg mb-10 max-w-xl mx-auto">
         Devis gratuit en 24h. Intervention à domicile 7j/7. Résultat garanti ou on revient sans frais.
       </p>
       <div class="flex justify-center gap-4 flex-wrap">
-        <a href="/contact" class="bg-primary text-on-primary px-10 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
+        <a href="/contact" class="bg-white text-primary px-10 py-4 rounded-full font-headline font-bold hover:scale-105 transition-transform duration-200">
           Demander un devis gratuit
         </a>
-        <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+        <a href="https://wa.me/32488338952" target="_blank" class="bg-white/20 text-on-primary px-10 py-4 rounded-full font-headline font-bold hover:bg-white/30 transition-all duration-200">
           💚 WhatsApp
         </a>
-        <a href="tel:+32488338952" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+        <a href="tel:+32488338952" class="bg-white/20 text-on-primary px-10 py-4 rounded-full font-headline font-bold hover:bg-white/30 transition-all duration-200">
           📞 +32 488 33 89 52
         </a>
       </div>

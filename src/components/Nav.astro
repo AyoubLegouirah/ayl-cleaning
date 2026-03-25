@@ -1,36 +1,54 @@
 ---
-interface Props {
-  currentPage?: string;
-}
-const { currentPage } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path || (path !== '/' && currentPath.startsWith(path));
 ---
 
-<nav class="bg-[#0f131c]/70 backdrop-blur-3xl sticky top-0 z-50 border-b border-[#414751]/10 shadow-[0_40px_60px_-10px_rgba(223,226,238,0.06)]">
+<nav class="bg-white/80 backdrop-blur-[24px] sticky top-0 z-50 shadow-[0_8px_48px_0px_rgba(26,28,30,0.04)]">
   <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-    <a href="/" class="text-2xl font-black text-[#a1c9ff] tracking-tighter font-headline">AYL</a>
+    <a href="/" class="text-2xl font-black text-primary tracking-tighter font-headline">AYL</a>
     <div class="hidden md:flex gap-8 items-center font-headline font-bold tracking-tight">
-      <a class={`transition-colors ${currentPage === 'accueil' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/">Accueil</a>
-      <a class={`transition-colors ${currentPage === 'vitres' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/services/nettoyage-vitres">Vitres</a>
-      <a class={`transition-colors ${currentPage === 'canape' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/services/nettoyage-canape">Canapé</a>
-      <a class={`transition-colors ${currentPage === 'contact' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/contact">Contact</a>
+      <a class={`nav-link transition-colors duration-200 ${isActive('/') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/">Accueil</a>
+      <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-vitres') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-vitres">Vitres</a>
+      <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-canape') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-canape">Canapé</a>
+      <a class={`nav-link transition-colors duration-200 ${isActive('/contact') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/contact">Contact</a>
     </div>
-    <a href="/contact" class="hidden md:block bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-md font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(161,201,255,0.3)] transition-all">
+    <a href="/contact" class="hidden md:block bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
       Devis gratuit
     </a>
     <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2">
-      <span class="w-6 h-0.5 bg-white block"></span>
-      <span class="w-6 h-0.5 bg-white block"></span>
-      <span class="w-6 h-0.5 bg-white block"></span>
+      <span class="w-6 h-0.5 bg-on-surface block"></span>
+      <span class="w-6 h-0.5 bg-on-surface block"></span>
+      <span class="w-6 h-0.5 bg-on-surface block"></span>
     </button>
   </div>
-  <div id="mobile-menu" class="hidden flex-col px-8 pb-4 gap-4 border-t border-white/5">
-    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/">Accueil</a>
-    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/services/nettoyage-vitres">Vitres</a>
-    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/services/nettoyage-canape">Canapé</a>
-    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/contact">Contact</a>
-    <a href="/contact" class="bg-[#4494e7] text-white px-6 py-2.5 rounded-md font-bold text-center">Devis gratuit</a>
+  <div id="mobile-menu" class="hidden flex-col px-8 pb-4 gap-4 bg-white/95">
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/">Accueil</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-vitres">Vitres</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-canape">Canapé</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/contact">Contact</a>
+    <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-bold text-center">Devis gratuit</a>
   </div>
 </nav>
+
+<style>
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00639b;
+    transition: width 200ms ease-out;
+  }
+  .nav-link.active::after {
+    width: 100%;
+  }
+</style>
 
 <script is:inline>
   const hamburger = document.getElementById('hamburger');

@@ -5,7 +5,7 @@ import Head from '../components/Head.astro';
 ---
 
 <!DOCTYPE html>
-<html class="dark" lang="fr">
+<html lang="fr">
 <head>
   <Head
     title="Nettoyage Professionnel à Bruxelles — Canapés & Vitres"
@@ -22,7 +22,7 @@ import Head from '../components/Head.astro';
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-10"></div>
       <img
         alt="Salon luxueux avec canapé et grandes fenêtres à Bruxelles"
         class="w-full h-full object-cover"
@@ -32,8 +32,8 @@ import Head from '../components/Head.astro';
     <div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
       <div class="flex flex-col justify-center space-y-8 max-w-2xl">
         <div class="space-y-4">
-          <span class="text-primary font-headline font-bold uppercase tracking-[0.2em] text-sm opacity-80">Nettoyage Professionnel · Bruxelles</span>
-          <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none text-on-surface">
+          <span class="text-primary font-headline font-bold uppercase tracking-[0.2em] text-sm">Nettoyage Professionnel · Bruxelles</span>
+          <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none text-on-surface" style="letter-spacing: -0.02em;">
             Nettoyage canapé<br/>
             <span class="text-primary">& vitres Bruxelles</span>
           </h1>
@@ -42,15 +42,15 @@ import Head from '../components/Head.astro';
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-extrabold text-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
+          <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-extrabold text-lg flex items-center justify-center gap-2 hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
             Devis gratuit
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
-          <a href="tel:+32488338952" class="border border-outline-variant/30 bg-surface/40 backdrop-blur-md text-on-surface px-8 py-4 rounded-md font-headline font-extrabold text-lg hover:bg-surface-container transition-all text-center">
+          <a href="tel:+32488338952" class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-extrabold text-lg transition-all duration-200 text-center hover:bg-surface-container-high">
             📞 +32 4 88 33 89 52
           </a>
         </div>
-        <div class="pt-12 flex items-center gap-8 border-t border-outline-variant/10">
+        <div class="pt-12 flex items-center gap-8">
           <div class="flex gap-2 text-tertiary">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -79,9 +79,9 @@ import Head from '../components/Head.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Canapé -->
-        <div class="group relative overflow-hidden bg-surface-container p-8 rounded-xl transition-all duration-500 hover:-translate-y-2 border border-outline-variant/5">
+        <div class="group relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:-translate-y-2 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
           <div class="relative z-10 space-y-6">
-            <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center text-primary">
+            <div class="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center text-primary">
               <span class="material-symbols-outlined text-3xl">chair</span>
             </div>
             <div class="space-y-3">
@@ -96,10 +96,10 @@ import Head from '../components/Head.astro';
               </ul>
             </div>
             <div class="flex gap-3">
-              <a class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center" href="/services/nettoyage-canape">
+              <a class="flex-1 bg-surface-container text-on-surface px-4 py-3 rounded-full font-bold text-sm text-center hover:bg-surface-container-highest transition-all duration-200" href="/services/nettoyage-canape">
                 En savoir plus →
               </a>
-              <a class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all" href="/contact">
+              <a class="flex-1 bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-4 py-3 rounded-full font-bold text-sm text-center hover:shadow-[0_4px_16px_rgba(0,99,155,0.2)] transition-all duration-200" href="/contact">
                 Devis gratuit
               </a>
             </div>
@@ -107,9 +107,9 @@ import Head from '../components/Head.astro';
         </div>
 
         <!-- Vitres -->
-        <div class="group relative overflow-hidden bg-surface-container p-8 rounded-xl transition-all duration-500 hover:-translate-y-2 border border-outline-variant/5">
+        <div class="group relative overflow-hidden bg-surface-container-lowest p-8 rounded-xl transition-all duration-500 hover:-translate-y-2 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
           <div class="relative z-10 space-y-6">
-            <div class="bg-primary/10 w-16 h-16 rounded-lg flex items-center justify-center text-primary">
+            <div class="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center text-primary">
               <span class="material-symbols-outlined text-3xl">window</span>
             </div>
             <div class="space-y-3">
@@ -124,10 +124,10 @@ import Head from '../components/Head.astro';
               </ul>
             </div>
             <div class="flex gap-3">
-              <a class="flex-1 border border-outline-variant/30 px-4 py-3 rounded-md hover:border-primary hover:text-primary transition-all font-bold text-sm text-center" href="/services/nettoyage-vitres">
+              <a class="flex-1 bg-surface-container text-on-surface px-4 py-3 rounded-full font-bold text-sm text-center hover:bg-surface-container-highest transition-all duration-200" href="/services/nettoyage-vitres">
                 En savoir plus →
               </a>
-              <a class="flex-1 bg-primary text-on-primary px-4 py-3 rounded-md font-bold text-sm text-center hover:bg-primary-container transition-all" href="/contact">
+              <a class="flex-1 bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-4 py-3 rounded-full font-bold text-sm text-center hover:shadow-[0_4px_16px_rgba(0,99,155,0.2)] transition-all duration-200" href="/contact">
                 Devis gratuit
               </a>
             </div>
@@ -151,58 +151,58 @@ import Head from '../components/Head.astro';
           </p>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
-              <div class="bg-secondary-container text-secondary p-2 rounded-lg">
+              <div class="bg-primary/10 text-primary p-2 rounded-xl">
                 <span class="material-symbols-outlined">verified</span>
               </div>
               <div>
-                <h4 class="font-bold font-headline">Techniciens expérimentés</h4>
+                <h4 class="font-bold font-headline text-on-surface">Techniciens expérimentés</h4>
                 <p class="text-sm text-on-surface-variant">Personnel formé aux techniques de nettoyage textile et vitrerie professionnelles.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="bg-secondary-container text-secondary p-2 rounded-lg">
+              <div class="bg-primary/10 text-primary p-2 rounded-xl">
                 <span class="material-symbols-outlined">eco</span>
               </div>
               <div>
-                <h4 class="font-bold font-headline">Produits biodégradables</h4>
+                <h4 class="font-bold font-headline text-on-surface">Produits biodégradables</h4>
                 <p class="text-sm text-on-surface-variant">Nettoyants écologiques homologués, sans danger pour vos enfants, animaux et l'environnement.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
-              <div class="bg-secondary-container text-secondary p-2 rounded-lg">
+              <div class="bg-primary/10 text-primary p-2 rounded-xl">
                 <span class="material-symbols-outlined">thumb_up</span>
               </div>
               <div>
-                <h4 class="font-bold font-headline">Satisfaction garantie</h4>
+                <h4 class="font-bold font-headline text-on-surface">Satisfaction garantie</h4>
                 <p class="text-sm text-on-surface-variant">Pas satisfait de notre prestation de nettoyage ? On revient sans frais supplémentaires.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="bg-surface-container-highest p-10 rounded-2xl flex flex-col justify-between">
+          <div class="bg-surface-container-highest p-10 rounded-xl flex flex-col justify-between shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
             <span class="material-symbols-outlined text-primary text-4xl mb-8">calendar_today</span>
             <div>
-              <h3 class="text-4xl font-headline font-extrabold mb-2">7j/7</h3>
+              <h3 class="text-4xl font-headline font-extrabold mb-2 text-on-surface">7j/7</h3>
               <p class="text-on-surface-variant font-medium">Disponible tous les jours de 9h à 17h.</p>
             </div>
           </div>
-          <div class="bg-primary p-10 rounded-2xl flex flex-col justify-between text-on-primary">
+          <div class="bg-gradient-to-br from-primary to-[#004d7a] p-10 rounded-xl flex flex-col justify-between text-on-primary">
             <span class="material-symbols-outlined text-4xl mb-8">speed</span>
             <div>
               <h3 class="text-4xl font-headline font-extrabold mb-2">24h</h3>
               <p class="font-medium opacity-90">Réponse garantie sous 24 heures.</p>
             </div>
           </div>
-          <div class="md:col-span-2 bg-surface-container p-10 rounded-2xl flex items-center justify-between">
+          <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl flex items-center justify-between shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
             <div class="flex items-center gap-6">
-              <span class="material-symbols-outlined text-tertiary text-5xl">request_quote</span>
+              <span class="material-symbols-outlined text-primary text-5xl">request_quote</span>
               <div>
-                <h3 class="text-2xl font-headline font-extrabold mb-1">Devis gratuit</h3>
+                <h3 class="text-2xl font-headline font-extrabold mb-1 text-on-surface">Devis gratuit</h3>
                 <p class="text-on-surface-variant">Sans engagement, réponse sous 24h. Appelez le +32 488 33 89 52.</p>
               </div>
             </div>
-            <a href="/contact" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">arrow_forward_ios</a>
+            <a href="/contact" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors duration-200">arrow_forward_ios</a>
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@ import Head from '../components/Head.astro';
           { slug: 'saint-gilles', label: 'Saint-Gilles' },
           { slug: 'laeken', label: 'Laeken' },
         ].map(c => (
-          <a href={`/zones/${c.slug}`} class="bg-surface-container border border-[#414751]/10 px-4 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition-all">
+          <a href={`/zones/${c.slug}`} class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm hover:text-primary hover:bg-surface-container-highest transition-all duration-200 shadow-[0_2px_8px_rgba(26,28,30,0.06)]">
             📍 {c.label}
           </a>
         ))}
@@ -241,19 +241,19 @@ import Head from '../components/Head.astro';
 
   <!-- CTA -->
   <section class="py-24 px-8">
-    <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-primary-container to-secondary-container p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+    <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-[#004d7a] p-12 md:p-20 text-center relative overflow-hidden shadow-[0_8px_48px_rgba(0,99,155,0.18)]">
       <div class="relative z-10 space-y-8">
-        <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-primary-container tracking-tighter">
+        <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-primary tracking-tighter" style="letter-spacing: -0.02em;">
           Canapé ou vitres à nettoyer à Bruxelles ?
         </h2>
-        <p class="text-on-primary-container/80 text-lg md:text-xl max-w-2xl mx-auto">
+        <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl mx-auto">
           Contactez AYL Cleaning pour un devis gratuit sous 24h. Intervention à domicile dans toutes les communes de Bruxelles.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/contact" class="bg-on-primary-container text-primary-fixed px-10 py-5 rounded-md font-headline font-extrabold text-xl shadow-lg hover:scale-105 transition-transform">
+          <a href="/contact" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:scale-105 transition-transform duration-200">
             Demander un devis
           </a>
-          <a href="https://wa.me/32488338952" target="_blank" class="bg-[#25D366] text-white px-10 py-5 rounded-md font-headline font-extrabold text-xl hover:bg-[#1EB855] transition-all shadow-lg">
+          <a href="https://wa.me/32488338952" target="_blank" class="bg-[#25D366] text-white px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:opacity-90 transition-opacity duration-200">
             💬 WhatsApp
           </a>
         </div>
