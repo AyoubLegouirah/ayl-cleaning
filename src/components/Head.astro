@@ -44,7 +44,28 @@ const schemaLocalBusiness = {
     "closes": "17:00"
   },
   "priceRange": "€€",
-  "serviceType": ["Nettoyage de canapés", "Nettoyage de vitres"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de nettoyage à domicile",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage de canapés",
+          "description": "Nettoyage professionnel de canapés, fauteuils et sièges à domicile à Bruxelles."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nettoyage de vitres",
+          "description": "Lavage professionnel de vitres, fenêtres et baies vitrées à domicile à Bruxelles."
+        }
+      }
+    ]
+  },
   "sameAs": ["https://wa.me/32488338952"]
 };
 ---
