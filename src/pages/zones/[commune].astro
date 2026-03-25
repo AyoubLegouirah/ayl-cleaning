@@ -143,6 +143,86 @@ const { commune } = Astro.props;
     </div>
   </section>
 
+  <!-- NOS PRESTATIONS DE NETTOYAGE -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+      Nos prestations de nettoyage <span class="text-primary">à {commune.nom}</span>
+    </h2>
+    <p class="text-on-surface-variant mb-12 max-w-2xl">
+      AYL Cleaning est une entreprise de nettoyage professionnelle qui intervient à {commune.nom} pour les particuliers et les professionnels. Nos techniciens se déplacent à domicile avec tout le matériel nécessaire pour un résultat impeccable.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <span class="text-3xl mb-4 block">🛋️</span>
+        <h3 class="font-headline font-bold text-xl mb-4">Nettoyage de canapés à {commune.nom}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+          Notre service de nettoyage textile comprend le lavage en profondeur de vos canapés, fauteuils et sièges. Nous utilisons des nettoyants enzymatiques professionnels pour le détachage des taches tenaces — vin, café, urine, graisses — et un traitement désinfectant anti-acariens. Notre technique d'extraction élimine les salissures et les mauvaises odeurs incrustées dans les fibres et les rembourrages. Séchage rapide en 2 à 4 heures. Particulièrement recommandé pour les foyers avec enfants, animaux ou personnes allergiques à {commune.nom}.
+        </p>
+        <ul class="text-on-surface-variant text-sm space-y-2">
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Tissu, microfibre, velours, cuir, similicuir</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Détachage, désinfection, désodorisation</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Produits biodégradables sans résidus toxiques</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Dès 60€ — devis gratuit sous 24h</li>
+        </ul>
+      </div>
+      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+        <span class="text-3xl mb-4 block">🪟</span>
+        <h3 class="font-headline font-bold text-xl mb-4">Lavage de vitres à {commune.nom}</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+          Notre service de vitrerie couvre le lavage complet de vos fenêtres, baies vitrées, vérandas et vitrines — intérieur et extérieur en une seule intervention. Nous utilisons un nettoyant vitrerie anti-calcaire professionnel, une raclette de précision et des chiffons microfibre pour un résultat sans traces ni auréoles. Les châssis, rebords et encadrements sont nettoyés dans le même passage. Un traitement hydrophobe est appliqué après le lavage pour repousser la poussière et le calcaire. Service disponible pour les particuliers, les commerces et les bureaux à {commune.nom}.
+        </p>
+        <ul class="text-on-surface-variant text-sm space-y-2">
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Fenêtres, baies vitrées, vérandas, châssis</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Intérieur et extérieur, sans traces garanties</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Traitement anti-calcaire et hydrophobe inclus</li>
+          <li class="flex items-center gap-2"><span class="text-primary">✓</span> Dès 40€ — devis gratuit sous 24h</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI FAIRE APPEL À UN PRO -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Pourquoi faire appel à une <span class="text-primary">société de nettoyage professionnelle ?</span>
+      </h2>
+      <p class="text-on-surface-variant mb-12 max-w-2xl">
+        Les produits ménagers du commerce — détergents, lessive, savon, liquide-vaisselle — ne sont pas formulés pour un nettoyage en profondeur des textiles et des surfaces vitrées. Voici pourquoi nos prestations de nettoyage font la différence.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: "science",
+            titre: "Produits de nettoyage professionnels",
+            desc: "Nos nettoyants enzymatiques et produits vitrerie concentrés sont réservés aux professionnels. Ils éliminent les salissures, désinfectent et désodorisent sans endommager les matières — là où les produits chimiques du commerce échouent ou abîment."
+          },
+          {
+            icon: "build",
+            titre: "Matériel professionnel",
+            desc: "Machine d'extraction textile, raclette de précision, chiffons microfibre professionnels, pulvérisateur adapté — notre équipement garantit un résultat que les outils ménagers ne peuvent pas atteindre, même avec les meilleurs produits d'entretien."
+          },
+          {
+            icon: "engineering",
+            titre: "Techniciens formés",
+            desc: "Nos nettoyeurs connaissent les techniques adaptées à chaque matière : velours, microfibre, cuir, double vitrage, véranda. Un mauvais produit ou une mauvaise méthode peut abîmer définitivement un canapé ou rayer des surfaces vitrées."
+          },
+          {
+            icon: "schedule",
+            titre: "Gain de temps et tranquillité",
+            desc: "Un nettoyage professionnel complet en 45 minutes à 2 heures selon la prestation. Pas de corvée ménagère, pas de résidus, pas de déception. Nous nous occupons de tout, vous profitez du résultat immédiatement."
+          },
+        ].map(item => (
+          <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- COMMUNES VOISINES -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
     <h2 class="font-headline text-2xl font-extrabold mb-6 tracking-tighter">
