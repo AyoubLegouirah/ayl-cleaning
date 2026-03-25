@@ -188,35 +188,68 @@ import Head from '../../components/Head.astro';
     </div>
   </section>
 
-  <!-- CONSEILS ENTRETIEN -->
+  <!-- SIGNES QUE VOS VITRES ONT BESOIN D'UN PRO -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
     <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Comment nettoyer vos vitres — <span class="text-primary">nos conseils</span>
+      Vos vitres ont besoin d'un <span class="text-primary">lavage professionnel</span> si…
     </h2>
     <p class="text-on-surface-variant mb-12 max-w-2xl">
-      Entre chaque intervention professionnelle, voici comment entretenir vos fenêtres et surfaces vitrées pour garder un résultat propre plus longtemps.
+      Des vitres sales ou mal nettoyées ternissent l'image de votre intérieur et laissent entrer moins de lumière naturelle. Voici les signes qui indiquent qu'il est temps d'appeler un professionnel.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">cleaning_services</span>
-        <h3 class="font-headline font-bold text-lg mb-3">La méthode chiffon microfibre</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Pour nettoyer vos vitres sans laisser de traces, utilisez un chiffon microfibre humide pour laver la surface, puis un second chiffon microfibre sec pour essuyer et faire briller. Évitez le papier journal ou les chiffons ordinaires qui laissent des résidus. Un spray produit nettoyant dilué dans de l'eau suffit pour les saletés légères — pas besoin de produits chimiques agressifs.
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "water_drop", titre: "Traces de calcaire incrustées", desc: "Les dépôts calcaires laissés par la pluie s'incrustent dans le verre avec le temps. Ils deviennent impossibles à éliminer avec un chiffon ordinaire et nécessitent un nettoyant anti-calcaire professionnel." },
+        { icon: "wb_cloudy", titre: "Auréoles et traces après nettoyage", desc: "Vous nettoyez vos vitres mais elles sont encore plus striées qu'avant ? C'est le signe d'un mauvais produit ou d'une mauvaise technique. Nos nettoyeurs professionnels utilisent raclette et produit vitrerie sans résidus." },
+        { icon: "light_mode", titre: "Moins de lumière naturelle", desc: "Des vitres encrassées par la pollution, la poussière et la saleté urbaine de Bruxelles filtrent jusqu'à 30% de lumière en moins. Un lavage complet restitue instantanément la luminosité de vos pièces." },
+        { icon: "storefront", titre: "Image de votre commerce", desc: "Une vitrine sale donne une mauvaise première impression à vos clients. Pour les commerces et bureaux à Bruxelles, des vitres impeccables sont un élément essentiel de votre image professionnelle." },
+        { icon: "calendar_month", titre: "Plus de 3 mois sans lavage", desc: "La pollution bruxelloise, les pluies calcaires et la poussière encrassent rapidement les surfaces vitrées. Un lavage tous les 3 à 4 mois est recommandé pour les particuliers, mensuel pour les commerces." },
+        { icon: "home", titre: "Véranda ou grande baie vitrée", desc: "Les vérandas, jardins d'hiver et grandes baies vitrées accumulent mousses, salissures et calcaire sur toute leur surface. Leur nettoyage complet intérieur et extérieur demande un matériel professionnel adapté." },
+      ].map(item => (
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- POURQUOI PAS FAIRE SOI-MÊME -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+          Pourquoi le nettoyage amateur <span class="text-primary">laisse des traces ?</span>
+        </h2>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Nettoyer ses vitres soi-même semble simple — mais le résultat est rarement à la hauteur. Les produits ménagers courants comme le liquide-vaisselle, le vinaigre blanc ou les sprays du commerce laissent des résidus qui attirent la poussière et créent des auréoles visibles dès que la lumière frappe la vitre.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Les chiffons ordinaires et le papier journal laissent des peluches et des micro-rayures sur les surfaces vitrées. Essuyer sans raclette crée inévitablement des traces en S visibles à contre-jour. Et nettoyer en plein soleil fait sécher le produit trop vite — résultat garanti : des auréoles de calcaire encore plus visibles qu'avant.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          Nos laveurs de vitres professionnels utilisent un nettoyant vitrerie concentré sans résidus, une raclette de précision et des chiffons microfibre pour un résultat impeccable et durable — sans traces, sans auréoles, sans effort de votre côté.
         </p>
       </div>
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">water_drop</span>
-        <h3 class="font-headline font-bold text-lg mb-3">Éliminer les traces et le calcaire</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Pour les traces de calcaire ou les saletés tenaces, préparez un seau avec de l'eau tiède et quelques gouttes de vinaigre blanc — c'est un nettoyant naturel efficace pour les surfaces vitrées. Appliquez avec une éponge ou un lave-vitre, frottez légèrement, puis essuyez avec un chiffon sec ou une raclette. Pour les miroirs, vaporisez directement un produit nettoyant et essuyez avec un chiffon microfibre pour un résultat sans auréoles.
-        </p>
-      </div>
-      <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">tips_and_updates</span>
-        <h3 class="font-headline font-bold text-lg mb-3">Conseils de nettoyeurs professionnels</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed">
-          Ne nettoyez jamais vos vitres en plein soleil — la chaleur fait sécher le produit nettoyant trop vite et laisse des traces. Travaillez par temps nuageux ou à l'ombre. Pour les vitrines de commerces et les grandes baies vitrées, un lave-vitre avec perche et raclette donne de meilleurs résultats qu'un spray et un chiffon. Pour un résultat impeccable et durable, nos nettoyeurs professionnels à Bruxelles restent la meilleure option.
-        </p>
+      <div class="space-y-4">
+        {[
+          { label: "Liquide-vaisselle ou spray du commerce", pro: false, desc: "Laisse des résidus collants qui attirent la poussière et créent des auréoles" },
+          { label: "Chiffon ordinaire ou papier journal", pro: false, desc: "Peluches, micro-rayures et traces inévitables sur les surfaces vitrées" },
+          { label: "Nettoyage en plein soleil", pro: false, desc: "Séchage trop rapide, dépôts de calcaire et auréoles garantis" },
+          { label: "Nettoyant vitrerie professionnel", pro: true, desc: "Sans résidus ni auréoles, anti-calcaire, résultat impeccable et durable" },
+          { label: "Raclette de précision + chiffon microfibre", pro: true, desc: "Évacue l'eau et les saletés en un passage, sans traces ni peluches" },
+          { label: "Traitement hydrophobe après lavage", pro: true, desc: "Repousse l'eau et la poussière — vos vitres restent propres 2 à 3 fois plus longtemps" },
+        ].map(item => (
+          <div class={`flex items-center gap-4 rounded-xl px-6 py-4 border ${item.pro ? 'bg-primary/5 border-primary/20' : 'bg-surface-container border-[#414751]/10'}`}>
+            <span class={`material-symbols-outlined text-xl ${item.pro ? 'text-primary' : 'text-red-400'}`}>
+              {item.pro ? 'check_circle' : 'cancel'}
+            </span>
+            <div>
+              <p class={`text-sm font-bold ${item.pro ? 'text-on-surface' : 'text-on-surface-variant'}`}>{item.label}</p>
+              <p class="text-on-surface-variant text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
