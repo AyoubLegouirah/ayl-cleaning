@@ -151,6 +151,79 @@ const { service, commune } = Astro.props;
     </div>
   </section>
 
+  <!-- POURQUOI FAIRE APPEL À UN PRO -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+      Pourquoi faire appel à une <span class="text-primary">entreprise de nettoyage professionnelle ?</span>
+    </h2>
+    <p class="text-on-surface-variant mb-12 max-w-2xl">
+      Les produits ménagers courants — détergents, lessive, savon, liquide-vaisselle, bicarbonate de soude — ne sont pas formulés pour un nettoyage en profondeur. Voici pourquoi nos prestations de nettoyage à {commune.nom} font la différence.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        {[
+          { label: "Produits ménagers du commerce", pro: false, desc: "Détergents, lessive, savon noir — laissent des résidus, risquent de décolorer ou d'abîmer les matières" },
+          { label: "Éponge et chiffon ordinaire", pro: false, desc: "N'atteignent pas les fibres en profondeur, laissent des traces et des résidus collants" },
+          { label: "Rinçage et séchage incomplets", pro: false, desc: "Favorisent les moisissures, les mauvaises odeurs et l'accumulation de salissures" },
+          { label: "Pulvérisateur et produits chimiques agressifs", pro: false, desc: "Risque de décoloration, de dégradation des textiles ou des surfaces vitrées" },
+        ].map(item => (
+          <div class="flex items-center gap-4 bg-surface-container rounded-xl px-6 py-4 border border-[#414751]/10">
+            <span class="material-symbols-outlined text-red-400 text-xl">cancel</span>
+            <div>
+              <p class="text-sm font-bold text-on-surface-variant">{item.label}</p>
+              <p class="text-on-surface-variant text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="space-y-4">
+        {[
+          { label: "Nettoyants enzymatiques professionnels", pro: true, desc: "Dissolvent les salissures organiques, désinfectent et désodorisent sans abîmer les matières" },
+          { label: "Matériel d'extraction et raclette de précision", pro: true, desc: "Pénètre dans les fibres ou élimine le calcaire en profondeur pour un résultat impeccable" },
+          { label: "Séchage rapide et résultat immédiat", pro: true, desc: "Technique à faible humidité — canapé sec en 2 à 4 heures, vitres propres immédiatement" },
+          { label: "Produits biodégradables homologués", pro: true, desc: "Sans résidus toxiques, sans danger pour vos enfants, animaux et l'environnement" },
+        ].map(item => (
+          <div class="flex items-center gap-4 bg-primary/5 rounded-xl px-6 py-4 border border-primary/20">
+            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+            <div>
+              <p class="text-sm font-bold text-on-surface">{item.label}</p>
+              <p class="text-on-surface-variant text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTRE PRESTATION EN DÉTAIL -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Notre prestation de <span class="text-primary">{service.nom.toLowerCase()} à {commune.nom}</span>
+      </h2>
+      <p class="text-on-surface-variant mb-12 max-w-2xl leading-relaxed">
+        {service.descriptionLongue} Nos nettoyeurs interviennent directement chez vous à {commune.nom} avec tout le matériel — pas besoin de vous déplacer. Résultat garanti ou on revient sans frais.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-2xl mb-3 block">location_on</span>
+          <h3 class="font-headline font-bold mb-2">Intervention à domicile à {commune.nom}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Nos techniciens se déplacent dans tous les quartiers de {commune.nom} : {commune.quartiers.join(', ')}. Déplacement gratuit dans un rayon de 20km autour de Bruxelles.</p>
+        </div>
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-2xl mb-3 block">home</span>
+          <h3 class="font-headline font-bold mb-2">Adapté aux logements de {commune.nom}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Nous intervenons dans tous les types de logements à {commune.nom} : {commune.typesLogements.toLowerCase()}. Notre service s'adapte à chaque configuration.</p>
+        </div>
+        <div class="bg-surface-container rounded-xl p-6 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-2xl mb-3 block">group</span>
+          <h3 class="font-headline font-bold mb-2">Notre clientèle à {commune.nom}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{commune.clientele}. Particuliers et professionnels, nous adaptons notre prestation de nettoyage à vos besoins et votre budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AUTRES SERVICES -->
   <section class="bg-surface-container-low py-16 px-8">
     <div class="max-w-7xl mx-auto">
