@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ayl-cleaning.vercel.app/sitemap-index.xml

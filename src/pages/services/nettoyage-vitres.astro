@@ -8,9 +8,89 @@ import Head from '../../components/Head.astro';
 <html lang="fr">
 <head>
   <Head
-    title="Nettoyage de vitres à Bruxelles — AYL Cleaning"
-    description="Nettoyage professionnel de vitres à Bruxelles. Fenêtres, baies vitrées, vérandas, châssis. Résultat sans traces garanti, intérieur et extérieur. Intervention 7j/7. Devis gratuit — +32 488 33 89 52."
+    title="Nettoyage de Vitres à Bruxelles — AYL Cleaning"
+    description="Nettoyage de vitres à Bruxelles. Fenêtres, baies vitrées, châssis. Résultat sans traces garanti, intérieur et extérieur. Devis gratuit 7j/7."
+    canonical="/services/nettoyage-vitres"
   />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Nettoyage de vitres",
+    "name": "Nettoyage professionnel de vitres à Bruxelles",
+    "description": "Lavage de fenêtres, baies vitrées, vérandas et vitrines à domicile. Intérieur et extérieur en une intervention. Résultat sans traces garanti.",
+    "url": "https://ayl-cleaning.vercel.app/services/nettoyage-vitres",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "AYL Cleaning",
+      "telephone": "+32488338952",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bruxelles",
+        "addressCountry": "BE"
+      }
+    },
+    "areaServed": "Bruxelles",
+    "offers": {
+      "@type": "Offer",
+      "price": "40",
+      "priceCurrency": "EUR",
+      "description": "Appartement à partir de 40€"
+    }
+  })}></script>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vous nettoyez aussi bien l'intérieur que l'extérieur ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous traitons systématiquement les deux faces en une seule intervention. Les châssis, rebords et encadrements sont également nettoyés sans supplément. Pas besoin de prévoir deux rendez-vous séparés."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pouvez-vous éliminer les traces de calcaire tenaces ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous utilisons des nettoyants vitrerie professionnels anti-calcaire qui dissolvent les dépôts minéraux sans rayer les surfaces vitrées. Après le lavage, on applique un traitement hydrophobe qui empêche le calcaire de se redéposer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps dure l'intervention ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comptez 30 à 45 minutes pour un appartement avec 6 à 8 fenêtres, et jusqu'à 2 heures pour une grande maison avec baies vitrées et véranda. Nous estimons la durée lors du devis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vous intervenez pour les commerces et bureaux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous nettoyons les vitrines de commerces, cloisons vitrées et fenêtres de bureaux. Nous proposons aussi des contrats d'entretien régulier mensuel ou trimestriel pour les professionnels à Bruxelles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Est-ce que les vitres restent propres longtemps après le nettoyage ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nous appliquons un traitement hydrophobe après chaque lavage qui repousse l'eau, la poussière et la pollution. Vos vitres restent propres 2 à 3 fois plus longtemps qu'avec un nettoyage classique."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment obtenir un devis pour mes vitres ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Appelez-nous au +32 488 33 89 52 ou envoyez-nous un message WhatsApp avec une photo de vos fenêtres. Nous vous répondons sous 24h avec un prix fixe et sans surprise."
+        }
+      }
+    ]
+  })}></script>
 </head>
 <body class="bg-surface text-on-surface font-body">
 

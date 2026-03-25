@@ -17,7 +17,11 @@ const { service } = Astro.props;
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <Head title={`${service.nom} à Bruxelles`} description={`AYL Cleaning — ${service.nom} professionnel à Bruxelles. ${service.description} Devis gratuit en 24h.`}/>
+  <Head
+    title={`${service.nom} à Bruxelles`}
+    description={`AYL Cleaning — ${service.nom} professionnel à Bruxelles. ${service.description} Devis gratuit en 24h.`}
+    canonical={`/services/${service.slug}`}
+  />
 </head>
 <body class="bg-surface text-on-surface font-body">
 
