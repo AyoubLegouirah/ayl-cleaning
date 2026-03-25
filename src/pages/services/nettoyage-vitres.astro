@@ -1,0 +1,246 @@
+---
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Head from '../../components/Head.astro';
+---
+
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+<head>
+  <Head
+    title="Nettoyage de vitres à Bruxelles — AYL Cleaning"
+    description="Nettoyage professionnel de vitres à Bruxelles. Fenêtres, baies vitrées, vérandas. Résultat sans traces garanti, intérieur et extérieur. Intervention 7j/7. Devis gratuit — 0488 33 89 52."
+  />
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<Nav currentPage="services"/>
+
+<main>
+
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-8 max-w-7xl mx-auto">
+    <span class="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4 block">
+      🪟 Nettoyage de vitres
+    </span>
+    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight max-w-3xl mb-6 tracking-tighter">
+      Nettoyage de vitres<br/>
+      <span class="text-primary">à Bruxelles</span>
+    </h1>
+    <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
+      Des vitres impeccables, sans traces ni auréoles. AYL Cleaning intervient à domicile à Bruxelles et communes environnantes pour le nettoyage de vos fenêtres, baies vitrées et vérandas — intérieur et extérieur.
+    </p>
+    <div class="flex gap-4 flex-wrap">
+      <a href="/contact" class="bg-primary text-on-primary px-8 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
+        Devis gratuit
+      </a>
+      <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+        💚 WhatsApp
+      </a>
+      <a href="tel:+32488338952" class="border border-[#414751]/30 px-8 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+        📞 0488 33 89 52
+      </a>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">verified</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Sans traces garanti</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Technique professionnelle à la raclette et produits sans résidus. Zéro auréole, zéro trace.</p>
+        </div>
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">home</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Intérieur & extérieur</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">On traite les deux faces en une seule intervention. Pas besoin de prévoir deux rendez-vous.</p>
+        </div>
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Produits écologiques</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Produits professionnels biodégradables, sans danger pour votre famille et l'environnement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENU SEO -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+          Pourquoi faire laver<br/><span class="text-primary">vos vitres par un pro ?</span>
+        </h2>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          À Bruxelles, la pollution urbaine, la pluie calcaire et la poussière encrassent rapidement les vitres. Un nettoyage amateur laisse souvent des traces et des auréoles difficiles à éliminer ensuite.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Notre technique professionnelle à la raclette combinée à des produits sans résidus garantit un résultat <strong class="text-on-surface">impeccable et durable</strong>. Vos vitres restent propres plus longtemps grâce au traitement hydrophobe appliqué après le nettoyage.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          Nous recommandons un nettoyage tous les 3 à 4 mois pour les particuliers, et mensuel pour les commerces et bureaux avec vitrine.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <h3 class="font-headline font-bold text-xl mb-4">Ce qu'on nettoie :</h3>
+        {[
+          { icon: "window", label: "Fenêtres simples et doubles vitrages" },
+          { icon: "door_sliding", label: "Baies vitrées et portes-fenêtres" },
+          { icon: "deck", label: "Vérandas et jardins d'hiver" },
+          { icon: "storefront", label: "Vitrines de commerces et bureaux" },
+          { icon: "roofing", label: "Velux et fenêtres de toit" },
+          { icon: "cleaning_services", label: "Encadrements, rebords et châssis" },
+        ].map(item => (
+          <div class="flex items-center gap-4 bg-surface-container rounded-xl px-6 py-4 border border-[#414751]/10">
+            <span class="material-symbols-outlined text-primary">{item.icon}</span>
+            <span class="text-on-surface-variant text-sm">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter text-center">
+        Comment se passe <span class="text-primary">l'intervention ?</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: "01", icon: "phone_in_talk", title: "Devis gratuit", desc: "Appelez-nous ou envoyez une photo de vos fenêtres par WhatsApp. Prix fixe communiqué sous 24h." },
+          { step: "02", icon: "calendar_month", title: "Rendez-vous", desc: "On fixe un créneau à votre convenance, 7j/7 de 9h à 17h, en semaine ou week-end." },
+          { step: "03", icon: "cleaning_services", title: "Nettoyage à domicile", desc: "Notre technicien arrive avec tout le matériel. Durée : 30 min à 2h selon le nombre de fenêtres." },
+          { step: "04", icon: "check_circle", title: "Résultat immédiat", desc: "Vitres impeccables, sans traces, intérieur et extérieur. Résultat visible immédiatement." },
+        ].map(item => (
+          <div class="relative bg-surface-container rounded-xl p-8 border border-[#414751]/10">
+            <span class="text-primary/20 font-headline font-extrabold text-6xl absolute top-4 right-6">{item.step}</span>
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-headline font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+      Tarifs indicatifs —<span class="text-primary"> Nettoyage vitres</span>
+    </h2>
+    <p class="text-on-surface-variant mb-10">Prix indicatifs pour Bruxelles et communes. Devis gratuit et personnalisé sur demande.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[
+        { label: "Appartement", price: "40–70€", desc: "Jusqu'à 8 fenêtres, intérieur et extérieur, encadrements inclus" },
+        { label: "Maison", price: "70–120€", desc: "Jusqu'à 15 fenêtres, baies vitrées, portes-fenêtres incluses" },
+        { label: "Commerce / Bureau", price: "Sur devis", desc: "Vitrines, open space, nettoyage régulier avec contrat mensuel possible" },
+      ].map(item => (
+        <div class="bg-surface-container rounded-xl p-8 border border-[#414751]/10 flex flex-col gap-3">
+          <h3 class="font-headline font-bold text-lg">{item.label}</h3>
+          <p class="text-primary font-headline font-extrabold text-3xl">{item.price}</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+    <p class="text-on-surface-variant/60 text-xs mt-6">* Prix indicatifs hors déplacement. Tarif exact confirmé après évaluation. Déplacement gratuit dans un rayon de 20km autour de Bruxelles.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter">
+        Questions fréquentes —<span class="text-primary"> Nettoyage vitres</span>
+      </h2>
+      <div class="space-y-4">
+        {[
+          {
+            q: "Vous nettoyez aussi bien l'intérieur que l'extérieur ?",
+            a: "Oui, nous traitons systématiquement les deux faces en une seule intervention. Pas besoin de prévoir deux rendez-vous séparés. Les encadrements et rebords sont également nettoyés sans supplément."
+          },
+          {
+            q: "Combien de temps dure l'intervention ?",
+            a: "Comptez 30 minutes pour un petit appartement, et jusqu'à 2 heures pour une grande maison avec baies vitrées et véranda. Nous estimons la durée lors du devis pour que vous puissiez planifier votre journée."
+          },
+          {
+            q: "Vous intervenez à domicile dans toutes les communes de Bruxelles ?",
+            a: "Oui, nous couvrons toutes les communes de Bruxelles-Capitale (Anderlecht, Ixelles, Uccle, Schaerbeek, Etterbeek, Forest, Molenbeek, Saint-Gilles, Laeken…) et un rayon de 20km autour de Bruxelles."
+          },
+          {
+            q: "Est-ce que les vitres restent propres longtemps après le nettoyage ?",
+            a: "Nous appliquons un traitement hydrophobe après le nettoyage qui repousse l'eau et la poussière. Vos vitres restent propres 2 à 3 fois plus longtemps qu'avec un nettoyage classique."
+          },
+          {
+            q: "Comment obtenir un devis pour mes vitres ?",
+            a: "Appelez-nous au 0488 33 89 52 ou envoyez-nous un message WhatsApp avec une photo de vos fenêtres et le nombre de pièces. Nous vous répondons sous 24h avec un prix fixe et sans surprise."
+          },
+        ].map((item) => (
+          <details class="bg-surface-container rounded-xl border border-[#414751]/10 group">
+            <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
+              <span>{item.q}</span>
+              <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <p class="px-8 pb-6 text-on-surface-variant text-sm leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+      Zones d'intervention — <span class="text-primary">Vitres Bruxelles</span>
+    </h2>
+    <p class="text-on-surface-variant mb-8">Nous intervenons dans toutes les communes de Bruxelles :</p>
+    <div class="flex flex-wrap gap-3">
+      {[
+        { slug: 'bruxelles', label: 'Bruxelles' },
+        { slug: 'anderlecht', label: 'Anderlecht' },
+        { slug: 'ixelles', label: 'Ixelles' },
+        { slug: 'uccle', label: 'Uccle' },
+        { slug: 'etterbeek', label: 'Etterbeek' },
+        { slug: 'forest', label: 'Forest' },
+        { slug: 'schaerbeek', label: 'Schaerbeek' },
+        { slug: 'molenbeek', label: 'Molenbeek' },
+        { slug: 'saint-gilles', label: 'Saint-Gilles' },
+        { slug: 'laeken', label: 'Laeken' },
+      ].map(c => (
+        <a href={`/zones/${c.slug}/nettoyage-vitres`} class="bg-surface-container border border-[#414751]/10 px-4 py-2 rounded-full text-sm hover:border-primary hover:text-primary transition-all">
+          📍 {c.label}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-24 px-8">
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-surface-container to-surface-container-low rounded-3xl p-16 text-center border border-[#414751]/10">
+      <h2 class="font-headline text-3xl md:text-4xl font-extrabold mb-4 tracking-tighter">
+        Des vitres impeccables<br/><span class="text-primary">sans traces ni auréoles</span>
+      </h2>
+      <p class="text-on-surface-variant text-lg mb-10 max-w-xl mx-auto">
+        Devis gratuit en 24h. Intervention à domicile à Bruxelles 7j/7. Résultat sans traces garanti.
+      </p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="/contact" class="bg-primary text-on-primary px-10 py-4 rounded-md font-headline font-bold hover:bg-primary-container transition-all">
+          Demander un devis gratuit
+        </a>
+        <a href="https://wa.me/32488338952" target="_blank" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+          💚 WhatsApp
+        </a>
+        <a href="tel:+32488338952" class="border border-[#414751]/30 px-10 py-4 rounded-md font-headline font-bold hover:border-primary transition-all">
+          📞 0488 33 89 52
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<Footer/>
+
+</body>
+</html>
