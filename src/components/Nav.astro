@@ -10,7 +10,8 @@ const { currentPage } = Astro.props;
     <a href="/" class="text-2xl font-black text-[#a1c9ff] tracking-tighter font-headline">AYL</a>
     <div class="hidden md:flex gap-8 items-center font-headline font-bold tracking-tight">
       <a class={`transition-colors ${currentPage === 'accueil' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/">Accueil</a>
-      <a class={`transition-colors ${currentPage === 'services' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/services">Services</a>
+      <a class={`transition-colors ${currentPage === 'vitres' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/services/nettoyage-vitres">Vitres</a>
+      <a class={`transition-colors ${currentPage === 'canape' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/services/nettoyage-canape">Canapé</a>
       <a class={`transition-colors ${currentPage === 'contact' ? 'text-[#a1c9ff] border-b-2 border-[#a1c9ff] pb-1' : 'text-[#dfe2ee]/80 hover:text-[#a1c9ff]'}`} href="/contact">Contact</a>
     </div>
     <a href="/contact" class="hidden md:block bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-md font-headline font-bold text-sm hover:shadow-[0_0_20px_rgba(161,201,255,0.3)] transition-all">
@@ -24,7 +25,8 @@ const { currentPage } = Astro.props;
   </div>
   <div id="mobile-menu" class="hidden flex-col px-8 pb-4 gap-4 border-t border-white/5">
     <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/">Accueil</a>
-    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/services">Services</a>
+    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/services/nettoyage-vitres">Vitres</a>
+    <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/services/nettoyage-canape">Canapé</a>
     <a class="text-white/70 hover:text-[#a1c9ff] py-2" href="/contact">Contact</a>
     <a href="/contact" class="bg-[#4494e7] text-white px-6 py-2.5 rounded-md font-bold text-center">Devis gratuit</a>
   </div>
