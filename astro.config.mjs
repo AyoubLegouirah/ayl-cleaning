@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://ayl-cleaning.vercel.app',
+  site: 'https://www.aylcleaning.be',
   integrations: [sitemap()],
 });
