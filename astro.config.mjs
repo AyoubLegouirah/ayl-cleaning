@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://www.aylcleaning.be',
+  site: 'https://aylcleaning.be',
   integrations: [sitemap()],
 });
