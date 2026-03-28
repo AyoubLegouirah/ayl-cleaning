@@ -278,32 +278,6 @@ import Head from '../../components/Head.astro';
     </div>
   </section>
 
-  <!-- SIGNES QUE VOS VITRES ONT BESOIN D'UN PRO -->
-  <section class="py-24 px-8 max-w-7xl mx-auto">
-    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Vos vitres ont besoin d'un <span class="text-primary">lavage professionnel</span> si…
-    </h2>
-    <p class="text-on-surface-variant mb-12 max-w-2xl">
-      Des vitres sales ou mal nettoyées ternissent l'image de votre intérieur et laissent entrer moins de lumière naturelle. Voici les signes qui indiquent qu'il est temps d'appeler un professionnel.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        { icon: "water_drop", titre: "Traces de calcaire incrustées", desc: "Les dépôts calcaires laissés par la pluie s'incrustent dans le verre avec le temps. Ils deviennent impossibles à éliminer avec un chiffon ordinaire et nécessitent un nettoyant anti-calcaire professionnel." },
-        { icon: "wb_cloudy", titre: "Auréoles et traces après nettoyage", desc: "Vous nettoyez vos vitres mais elles sont encore plus striées qu'avant ? C'est le signe d'un mauvais produit ou d'une mauvaise technique. Nos nettoyeurs professionnels utilisent raclette et produit vitrerie sans résidus." },
-        { icon: "light_mode", titre: "Moins de lumière naturelle", desc: "Des vitres encrassées par la pollution, la poussière et la saleté urbaine de Bruxelles filtrent jusqu'à 30% de lumière en moins. Un lavage complet restitue instantanément la luminosité de vos pièces." },
-        { icon: "storefront", titre: "Image de votre commerce", desc: "Une vitrine sale donne une mauvaise première impression à vos clients. Pour les commerces et bureaux à Bruxelles, des vitres impeccables sont un élément essentiel de votre image professionnelle." },
-        { icon: "calendar_month", titre: "Plus de 3 mois sans lavage", desc: "La pollution bruxelloise, les pluies calcaires et la poussière encrassent rapidement les surfaces vitrées. Un lavage tous les 3 à 4 mois est recommandé pour les particuliers, mensuel pour les commerces." },
-        { icon: "home", titre: "Véranda ou grande baie vitrée", desc: "Les vérandas, jardins d'hiver et grandes baies vitrées accumulent mousses, salissures et calcaire sur toute leur surface. Leur nettoyage complet intérieur et extérieur demande un matériel professionnel adapté." },
-      ].map(item => (
-        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
-          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
   <!-- POURQUOI PAS FAIRE SOI-MÊME -->
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">

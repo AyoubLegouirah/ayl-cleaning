@@ -259,32 +259,6 @@ import Head from '../../components/Head.astro';
     </div>
   </section>
 
-  <!-- SIGNES QUE VOTRE CANAPÉ A BESOIN D'UN PRO -->
-  <section class="py-24 px-8 max-w-7xl mx-auto">
-    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-      Votre canapé a besoin d'un <span class="text-primary">nettoyage professionnel</span> si…
-    </h2>
-    <p class="text-on-surface-variant mb-12 max-w-2xl">
-      Un canapé peut sembler propre en surface et pourtant abriter des milliers d'acariens, bactéries et allergènes dans ses fibres. Voici les signes qui ne trompent pas.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {[
-        { icon: "sick", titre: "Allergies ou irritations", desc: "Vous éternuez, vos yeux piquent ou votre peau réagit après avoir été assis sur le canapé ? Ce sont les acariens et allergènes logés dans les fibres textiles qui en sont probablement la cause." },
-        { icon: "sentiment_dissatisfied", titre: "Mauvaises odeurs persistantes", desc: "Une odeur de transpiration, de tabac, d'urine ou d'animaux qui revient malgré l'aération ? Les molécules odorantes sont piégées dans les rembourrages — seul un lavage en profondeur les élimine vraiment." },
-        { icon: "opacity", titre: "Taches tenaces incrustées", desc: "Du café, du vin, de la sauce ou de l'urine séchée qui résiste à tous vos produits ménagers ? Les taches incrustées dans les fibres nécessitent un détachant professionnel et une extraction puissante." },
-        { icon: "pets", titre: "Présence d'animaux ou d'enfants", desc: "Les foyers avec animaux ou jeunes enfants accumulent poils, salissures et bactéries bien plus vite. Un nettoyage et une désinfection réguliers sont indispensables pour un environnement sain." },
-        { icon: "palette", titre: "Couleurs ternes et tissu terne", desc: "Votre canapé a perdu son éclat d'origine ? Les fibres textiles encrassées par la poussière et les salissures donnent un aspect vieilli. Un lavage professionnel ravive les couleurs et redonne vie au tissu." },
-        { icon: "calendar_month", titre: "Plus de 12 mois sans nettoyage", desc: "Même sans taches visibles, un canapé utilisé quotidiennement accumule en moyenne 100 000 acariens par mètre carré après un an. Un nettoyage annuel est recommandé pour un intérieur sain." },
-      ].map(item => (
-        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
-          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
-          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
   <!-- POURQUOI PAS FAIRE SOI-MÊME -->
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
