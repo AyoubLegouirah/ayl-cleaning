@@ -1,0 +1,232 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
+
+const bruxelles19 = [
+  "Anderlecht", "Auderghem", "Berchem-Sainte-Agathe", "Bruxelles-Ville",
+  "Etterbeek", "Evere", "Forest", "Ganshoren", "Ixelles", "Jette",
+  "Koekelberg", "Laeken", "Molenbeek-Saint-Jean", "Saint-Gilles",
+  "Saint-Josse-ten-Noode", "Schaerbeek", "Uccle", "Watermael-Boitsfort",
+  "Woluwe-Saint-Lambert", "Woluwe-Saint-Pierre",
+];
+
+const brabantWallon = [
+  { nom: "Waterloo", note: "Accès rapide via ring" },
+  { nom: "La Hulpe", note: null },
+  { nom: "Rixensart", note: null },
+  { nom: "Lasne", note: null },
+  { nom: "Genval", note: "Entité de Rixensart" },
+];
+
+const brabantFlamand = [
+  { nom: "Vilvorde", note: null },
+  { nom: "Zaventem", note: "Proche aéroport" },
+  { nom: "Tervuren", note: null },
+  { nom: "Wezembeek-Oppem", note: null },
+  { nom: "Kraainem", note: null },
+  { nom: "Dilbeek", note: null },
+  { nom: "Grimbergen", note: null },
+];
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <Head
+    title="Zones d'intervention — Bruxelles & périphérie | AYL Cleaning"
+    description="AYL Cleaning intervient à Bruxelles (19 communes), en Brabant wallon (Waterloo, La Hulpe, Rixensart…) et en Brabant flamand (Vilvorde, Zaventem, Tervuren…). Rayon de 20 km. Devis gratuit."
+    canonical="/zones-intervention"
+  />
+</head>
+<body class="bg-surface text-on-surface font-body">
+
+<Nav currentPage="zones"/>
+
+<main>
+
+  <!-- HERO -->
+  <section class="pt-32 pb-16 px-8">
+    <div class="max-w-7xl mx-auto">
+      <span class="text-primary font-headline font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Zone de couverture</span>
+      <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter leading-tight mb-6 max-w-3xl">
+        Zones d'intervention —<br/>
+        <span class="text-primary">Bruxelles & périphérie</span>
+      </h1>
+      <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-8">
+        AYL Cleaning intervient à domicile pour le nettoyage de canapés et de vitres dans un rayon de 20 km autour de Bruxelles : les 19 communes de la Région bruxelloise, plusieurs communes du Brabant wallon et du Brabant flamand.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
+          Devis gratuit
+        </a>
+        <a href="tel:+32488338952" class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold hover:bg-surface-container-high transition-all duration-200">
+          📞 +32 488 33 89 52
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARTE GOOGLE MAPS -->
+  <section class="px-8 pb-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="rounded-2xl overflow-hidden shadow-[0_4px_48px_rgba(26,28,30,0.08)] border border-outline-variant">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80462.69547628!2d4.3517!3d50.8503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1700000000000!5m2!1sfr!2sbe"
+          width="100%"
+          height="420"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Zone d'intervention AYL Cleaning — Bruxelles et périphérie"
+        ></iframe>
+      </div>
+      <p class="text-on-surface-variant/60 text-xs mt-3">
+        Déplacement gratuit dans un rayon de 20 km autour de Bruxelles. Hors zone : nous contacter pour estimer les frais de déplacement.
+      </p>
+    </div>
+  </section>
+
+  <!-- ZONES PAR RÉGION -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold tracking-tighter mb-4">
+        Communes couvertes
+      </h2>
+      <p class="text-on-surface-variant mb-16 max-w-2xl">
+        Retrouvez ci-dessous l'ensemble des communes où nous intervenons. Vous ne trouvez pas votre localité ? Contactez-nous — nous étudions chaque demande hors zone.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Bruxelles -->
+        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-xl">location_city</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-lg text-on-surface">Bruxelles</h3>
+              <p class="text-xs text-on-surface-variant">19 communes</p>
+            </div>
+          </div>
+          <ul class="space-y-2">
+            {bruxelles19.map(commune => (
+              <li class="flex items-center gap-2 text-sm text-on-surface-variant">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></span>
+                {commune}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Brabant wallon -->
+        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-xl">park</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-lg text-on-surface">Brabant wallon</h3>
+              <p class="text-xs text-on-surface-variant">Sud de Bruxelles</p>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            {brabantWallon.map(({ nom, note }) => (
+              <li class="flex items-start gap-2 text-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 mt-1.5"></span>
+                <div>
+                  <span class="text-on-surface-variant">{nom}</span>
+                  {note && <span class="block text-xs text-on-surface-variant/50">{note}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Brabant flamand -->
+        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-xl">forest</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-lg text-on-surface">Brabant flamand</h3>
+              <p class="text-xs text-on-surface-variant">Périphérie nord et est</p>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            {brabantFlamand.map(({ nom, note }) => (
+              <li class="flex items-start gap-2 text-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 mt-1.5"></span>
+                <div>
+                  <span class="text-on-surface-variant">{nom}</span>
+                  {note && <span class="block text-xs text-on-surface-variant/50">{note}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO DÉPLACEMENT -->
+  <section class="py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">directions_car</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Déplacement gratuit</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Aucun frais de déplacement dans un rayon de 20 km autour de Bruxelles. Le prix affiché est tout compris.
+          </p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">calendar_today</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Disponible 7j/7</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Intervention en semaine et le week-end, de 9h à 17h. Nous nous adaptons à votre planning.
+          </p>
+        </div>
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">help_outline</span>
+          <h3 class="font-headline font-bold text-lg mb-3">Vous n'êtes pas dans la liste ?</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">
+            Nous étudions les demandes hors zone au cas par cas. Contactez-nous pour vérifier la faisabilité et obtenir un devis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-8">
+    <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-[#004d7a] p-12 md:p-20 text-center relative overflow-hidden shadow-[0_8px_48px_rgba(0,99,155,0.18)]">
+      <div class="relative z-10 space-y-8">
+        <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-primary tracking-tighter" style="letter-spacing: -0.02em;">
+          Vous êtes dans notre zone ?
+        </h2>
+        <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl mx-auto">
+          Demandez un devis gratuit sous 24h. Intervention à domicile pour le nettoyage de canapés et de vitres.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contact" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:scale-105 transition-transform duration-200">
+            Demander un devis
+          </a>
+          <a href="https://wa.me/32488338952" target="_blank" class="bg-[#25D366] text-white px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:opacity-90 transition-opacity duration-200">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<Footer/>
+
+</body>
+</html>

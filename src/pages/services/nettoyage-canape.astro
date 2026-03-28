@@ -37,7 +37,7 @@ import Head from '../../components/Head.astro';
         <span class="text-primary">à Bruxelles</span>
       </h1>
       <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
-        Votre canapé accumule poussières, acariens, taches et mauvaises odeurs au fil du temps. AYL Cleaning intervient à domicile à Bruxelles pour un lavage en profondeur des textiles et rembourrages — détachage, désinfection et traitement anti-acariens inclus.
+        Votre canapé accumule poussières, acariens, taches et mauvaises odeurs au fil du temps. AYL Cleaning intervient à domicile à Bruxelles et alentours pour un lavage en profondeur des textiles et rembourrages — détachage, désinfection et traitement anti-acariens inclus.
       </p>
       <div class="flex gap-4 flex-wrap">
         <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
@@ -182,7 +182,7 @@ import Head from '../../components/Head.astro';
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
         Tarifs indicatifs —<span class="text-primary"> Nettoyage canapé</span>
       </h2>
-      <p class="text-on-surface-variant mb-10">Prix indicatifs pour Bruxelles et communes. Devis gratuit et personnalisé sur demande.</p>
+      <p class="text-on-surface-variant mb-10">Prix indicatifs pour Bruxelles et périphérie. Devis gratuit et personnalisé sur demande.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { label: "Canapé 2 places", price: "À partir de 60€", desc: "Tissu ou microfibre, lavage complet, détachage et désinfection inclus" },
@@ -343,7 +343,7 @@ import Head from '../../components/Head.astro';
           },
           {
             q: "Vous vous déplacez à domicile à Bruxelles ?",
-            a: "Oui, nous intervenons exclusivement à domicile dans toutes les communes de Bruxelles (Anderlecht, Ixelles, Uccle, Schaerbeek, Etterbeek, Forest, Molenbeek, Saint-Gilles, Laeken…) et dans un rayon de 20km."
+            a: "Oui, nous intervenons exclusivement à domicile à Bruxelles et dans toute sa périphérie (Brabant wallon : Waterloo, La Hulpe, Rixensart… — Brabant flamand : Vilvorde, Zaventem, Tervuren…) dans un rayon de 20 km."
           },
           {
             q: "Les produits utilisés sont-ils sans danger pour mes enfants et animaux ?",
@@ -374,27 +374,15 @@ import Head from '../../components/Head.astro';
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-        Zones d'intervention — <span class="text-primary">Canapé Bruxelles</span>
+        Zones d'intervention — <span class="text-primary">Bruxelles & périphérie</span>
       </h2>
-      <p class="text-on-surface-variant mb-8">Nous intervenons dans toutes les communes de Bruxelles :</p>
-      <div class="flex flex-wrap gap-3">
-        {[
-          { slug: 'bruxelles', label: 'Bruxelles' },
-          { slug: 'anderlecht', label: 'Anderlecht' },
-          { slug: 'ixelles', label: 'Ixelles' },
-          { slug: 'uccle', label: 'Uccle' },
-          { slug: 'etterbeek', label: 'Etterbeek' },
-          { slug: 'forest', label: 'Forest' },
-          { slug: 'schaerbeek', label: 'Schaerbeek' },
-          { slug: 'molenbeek', label: 'Molenbeek' },
-          { slug: 'saint-gilles', label: 'Saint-Gilles' },
-          { slug: 'laeken', label: 'Laeken' },
-        ].map(c => (
-          <a href={`/zones/${c.slug}/nettoyage-canape`} class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm hover:text-primary hover:bg-surface-container-highest transition-all duration-200 shadow-[0_2px_8px_rgba(26,28,30,0.06)]">
-            📍 {c.label}
-          </a>
-        ))}
-      </div>
+      <p class="text-on-surface-variant mb-8 max-w-2xl">
+        Nous intervenons pour le nettoyage de canapés à Bruxelles (19 communes), dans le Brabant wallon (Waterloo, La Hulpe, Rixensart, Lasne, Genval) et le Brabant flamand (Vilvorde, Zaventem, Tervuren…). Déplacement gratuit dans un rayon de 20 km.
+      </p>
+      <a href="/zones-intervention" class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary font-headline font-bold px-6 py-3 rounded-full shadow-[0_2px_8px_rgba(26,28,30,0.06)] hover:bg-surface-container-highest transition-all duration-200">
+        <span class="material-symbols-outlined text-base">map</span>
+        Voir toutes les zones couvertes
+      </a>
     </div>
   </section>
 

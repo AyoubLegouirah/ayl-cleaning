@@ -10,6 +10,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
       <a class={`nav-link transition-colors duration-200 ${isActive('/') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/">Accueil</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-vitres') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-vitres">Vitres</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-canape') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-canape">Canapé</a>
+      <a class={`nav-link transition-colors duration-200 ${isActive('/zones-intervention') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/zones-intervention">Zones</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/contact') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/contact">Contact</a>
     </div>
     <a href="/contact" class="hidden md:block bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
@@ -25,6 +26,7 @@ const isActive = (path: string) => currentPath === path || (path !== '/' && curr
     <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/">Accueil</a>
     <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-vitres">Vitres</a>
     <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-canape">Canapé</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/zones-intervention">Zones</a>
     <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/contact">Contact</a>
     <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-bold text-center">Devis gratuit</a>
   </div>

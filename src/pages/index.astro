@@ -32,13 +32,13 @@ import Head from '../components/Head.astro';
     <div class="relative z-20 max-w-7xl mx-auto px-8 w-full">
       <div class="flex flex-col justify-center space-y-8 max-w-2xl">
         <div class="space-y-4">
-          <span class="text-primary font-headline font-bold uppercase tracking-[0.2em] text-sm">Nettoyage Professionnel · Bruxelles</span>
+          <span class="text-primary font-headline font-bold uppercase tracking-[0.2em] text-sm">Nettoyage Professionnel · Bruxelles et alentours</span>
           <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none text-on-surface" style="letter-spacing: -0.02em;">
             Nettoyage canapé<br/>
             <span class="text-primary">& vitres Bruxelles</span>
           </h1>
           <p class="text-lg md:text-xl text-on-surface-variant max-w-lg font-light leading-relaxed">
-            AYL Cleaning intervient à domicile à Bruxelles pour le nettoyage de vos canapés, fauteuils, fenêtres et baies vitrées. Détachage, désinfection, lavage intérieur et extérieur — nos nettoyeurs éliminent toutes vos salissures pour une propreté durable, résultat garanti.
+            AYL Cleaning intervient à domicile à Bruxelles et dans toute sa périphérie pour le nettoyage de vos canapés, fauteuils, fenêtres et baies vitrées. Détachage, désinfection, lavage intérieur et extérieur — nos nettoyeurs éliminent toutes vos salissures pour une propreté durable, résultat garanti.
           </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -73,7 +73,7 @@ import Head from '../components/Head.astro';
           <h2 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tighter">Nos Services à Bruxelles</h2>
         </div>
         <p class="text-on-surface-variant max-w-sm font-light">
-          Nettoyage textile et vitrerie pour particuliers et professionnels dans toutes les communes de Bruxelles.
+          Nettoyage textile et vitrerie pour particuliers et professionnels à Bruxelles et en périphérie.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -215,29 +215,27 @@ import Head from '../components/Head.astro';
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-        Zones d'intervention — <span class="text-primary">Bruxelles & communes</span>
+        Zones d'intervention — <span class="text-primary">Bruxelles & périphérie</span>
       </h2>
       <p class="text-on-surface-variant mb-8 max-w-2xl">
-        AYL Cleaning intervient dans toutes les communes de Bruxelles-Capitale pour le nettoyage de canapés et de vitres à domicile. Déplacement gratuit dans un rayon de 20km.
+        AYL Cleaning intervient à Bruxelles et dans sa périphérie — Brabant wallon et Brabant flamand inclus. Déplacement gratuit dans un rayon de 20 km autour de Bruxelles.
       </p>
-      <div class="flex flex-wrap gap-3">
+      <div class="flex flex-wrap gap-3 mb-8">
         {[
-          { slug: 'bruxelles', label: 'Bruxelles' },
-          { slug: 'anderlecht', label: 'Anderlecht' },
-          { slug: 'ixelles', label: 'Ixelles' },
-          { slug: 'uccle', label: 'Uccle' },
-          { slug: 'etterbeek', label: 'Etterbeek' },
-          { slug: 'forest', label: 'Forest' },
-          { slug: 'schaerbeek', label: 'Schaerbeek' },
-          { slug: 'molenbeek', label: 'Molenbeek' },
-          { slug: 'saint-gilles', label: 'Saint-Gilles' },
-          { slug: 'laeken', label: 'Laeken' },
-        ].map(c => (
-          <a href={`/zones/${c.slug}`} class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm hover:text-primary hover:bg-surface-container-highest transition-all duration-200 shadow-[0_2px_8px_rgba(26,28,30,0.06)]">
-            📍 {c.label}
-          </a>
+          'Bruxelles', 'Anderlecht', 'Ixelles', 'Uccle', 'Etterbeek', 'Forest',
+          'Schaerbeek', 'Molenbeek', 'Saint-Gilles', 'Laeken',
+          'Waterloo', 'La Hulpe', 'Rixensart', 'Lasne',
+          'Vilvorde', 'Zaventem', 'Tervuren', 'Dilbeek', 'Grimbergen',
+        ].map(label => (
+          <span class="bg-surface-container-lowest text-on-surface-variant px-4 py-2 rounded-full text-sm shadow-[0_2px_8px_rgba(26,28,30,0.06)]">
+            📍 {label}
+          </span>
         ))}
       </div>
+      <a href="/zones-intervention" class="inline-flex items-center gap-2 text-primary font-headline font-bold hover:underline">
+        Voir toutes les zones couvertes
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
     </div>
   </section>
 
@@ -253,7 +251,7 @@ import Head from '../components/Head.astro';
           AYL Cleaning est une entreprise de nettoyage professionnelle basée à Bruxelles. Nos nettoyeurs interviennent chez les particuliers et dans les locaux professionnels pour l'ensemble de vos besoins en propreté : nettoyage des vitres et surfaces vitrées, lavage en profondeur de canapés et moquettes, dépoussiérage et élimination des salissures tenaces. Nous utilisons des produits d'entretien professionnels adaptés à chaque support — textiles, sols, vitrages — pour des résultats que les méthodes ménagères classiques, aspirateur ou sprays du commerce, ne permettent pas d'atteindre.
         </p>
         <p>
-          Que vous ayez besoin d'un nettoyage ponctuel ou d'un entretien régulier, nos prestations de nettoyage s'adaptent à votre situation. Nettoyage des sols, décapage de taches incrustées, ménage de fin de chantier ou contrat d'entretien pour bureaux et commerces — nous intervenons dans toutes les communes de Bruxelles avec un devis gratuit sous 24h.
+          Que vous ayez besoin d'un nettoyage ponctuel ou d'un entretien régulier, nos prestations de nettoyage s'adaptent à votre situation. Nettoyage des sols, décapage de taches incrustées, ménage de fin de chantier ou contrat d'entretien pour bureaux et commerces — nous intervenons à Bruxelles et dans toute sa périphérie avec un devis gratuit sous 24h.
         </p>
       </div>
     </div>
@@ -264,10 +262,10 @@ import Head from '../components/Head.astro';
     <div class="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-[#004d7a] p-12 md:p-20 text-center relative overflow-hidden shadow-[0_8px_48px_rgba(0,99,155,0.18)]">
       <div class="relative z-10 space-y-8">
         <h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-primary tracking-tighter" style="letter-spacing: -0.02em;">
-          Canapé ou vitres à nettoyer à Bruxelles ?
+          Canapé ou vitres à nettoyer à Bruxelles ou en périphérie ?
         </h2>
         <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl mx-auto">
-          Contactez AYL Cleaning pour un devis gratuit sous 24h. Intervention à domicile dans toutes les communes de Bruxelles.
+          Contactez AYL Cleaning pour un devis gratuit sous 24h. Intervention à domicile à Bruxelles et dans toute la périphérie.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/contact" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:scale-105 transition-transform duration-200">
