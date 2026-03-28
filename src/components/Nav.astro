@@ -3,60 +3,148 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) => currentPath === path || (path !== '/' && currentPath.startsWith(path));
 ---
 
-<nav class="bg-white/80 backdrop-blur-[24px] sticky top-0 z-50 shadow-[0_8px_48px_0px_rgba(26,28,30,0.04)]">
-  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-    <a href="/" class="text-2xl font-black text-primary tracking-tighter font-headline">AYL</a>
-    <div class="hidden md:flex gap-8 items-center font-headline font-bold tracking-tight">
+<nav id="main-nav" class="bg-white/80 backdrop-blur-[24px] sticky top-0 z-50 shadow-[0_8px_48px_0px_rgba(26,28,30,0.04)] transition-all duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto transition-all duration-300" id="nav-inner">
+    <a href="/" class="flex items-center gap-1.5 font-headline font-black tracking-tighter">
+      <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+      <span class="text-2xl text-primary">AYL</span>
+    </a>
+    <div id="nav-links" class="hidden md:flex gap-10 items-center font-headline font-bold tracking-tight relative pb-1">
       <a class={`nav-link transition-colors duration-200 ${isActive('/') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/">Accueil</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-vitres') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-vitres">Vitres</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/services/nettoyage-canape') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/services/nettoyage-canape">Canapé</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/zones-intervention') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/zones-intervention">Zones</a>
       <a class={`nav-link transition-colors duration-200 ${isActive('/contact') ? 'text-on-surface active' : 'text-on-surface/70 hover:text-primary'}`} href="/contact">Contact</a>
+      <span id="nav-indicator"></span>
     </div>
-    <a href="/contact" class="hidden md:block bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
+    <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200 group">
       Devis gratuit
+      <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
     </a>
-    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2">
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
       <span class="w-6 h-0.5 bg-on-surface block"></span>
       <span class="w-6 h-0.5 bg-on-surface block"></span>
       <span class="w-6 h-0.5 bg-on-surface block"></span>
     </button>
   </div>
-  <div id="mobile-menu" class="hidden flex-col px-8 pb-4 gap-4 bg-white/95">
-    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/">Accueil</a>
-    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-vitres">Vitres</a>
-    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/services/nettoyage-canape">Canapé</a>
-    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/zones-intervention">Zones</a>
-    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors" href="/contact">Contact</a>
-    <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-bold text-center">Devis gratuit</a>
+  <div id="mobile-menu" class="flex-col px-8 pb-4 gap-4 bg-white/95 overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out hidden-mobile">
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors font-headline font-bold" href="/">Accueil</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors font-headline font-bold" href="/services/nettoyage-vitres">Vitres</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors font-headline font-bold" href="/services/nettoyage-canape">Canapé</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors font-headline font-bold" href="/zones-intervention">Zones</a>
+    <a class="text-on-surface/70 hover:text-primary py-2 transition-colors font-headline font-bold" href="/contact">Contact</a>
+    <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-6 py-2.5 rounded-full font-bold text-center mb-2">Devis gratuit</a>
   </div>
 </nav>
 
 <style>
-  .nav-link {
-    position: relative;
-    padding-bottom: 2px;
-  }
-  .nav-link::after {
-    content: '';
+  /* Sliding underline indicator */
+  #nav-indicator {
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
+    bottom: 0;
     height: 2px;
     background-color: #00639b;
-    transition: width 200ms ease-out;
+    border-radius: 2px;
+    pointer-events: none;
+    transition: left 250ms cubic-bezier(0.4, 0, 0.2, 1), width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
   }
-  .nav-link.active::after {
-    width: 100%;
+  #nav-indicator.visible {
+    opacity: 1;
+  }
+
+  /* Hamburger → X animation */
+  #hamburger > span {
+    transition: transform 150ms ease, opacity 150ms ease;
+  }
+  /* gap-1.5 = 6px + h-0.5 = 2px → center-to-center = 8px */
+  #hamburger.open > span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #hamburger.open > span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  #hamburger.open > span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu flex layout when open */
+  #mobile-menu.is-open {
+    display: flex;
+    max-height: 400px;
+  }
+  #mobile-menu.hidden-mobile {
+    display: none;
+  }
+
+  /* Compact nav on scroll */
+  #main-nav.scrolled {
+    box-shadow: 0 8px 48px 0px rgba(26,28,30,0.10);
+  }
+  #nav-inner.scrolled {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
   }
 </style>
 
 <script is:inline>
+  /* Sliding nav indicator */
+  const navLinks = document.getElementById('nav-links');
+  const indicator = document.getElementById('nav-indicator');
+
+  function moveIndicator(el, instant) {
+    if (!navLinks || !indicator || !el) return;
+    const containerRect = navLinks.getBoundingClientRect();
+    const linkRect = el.getBoundingClientRect();
+    if (instant) indicator.style.transition = 'none';
+    indicator.style.left = (linkRect.left - containerRect.left) + 'px';
+    indicator.style.width = linkRect.width + 'px';
+    indicator.classList.add('visible');
+    if (instant) requestAnimationFrame(() => { indicator.style.transition = ''; });
+  }
+
+  // Position on active link immediately (no transition)
+  const activeLink = navLinks?.querySelector('.nav-link.active');
+  if (activeLink) moveIndicator(activeLink, true);
+
+  // Follow hover
+  navLinks?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('mouseenter', () => moveIndicator(link, false));
+  });
+  navLinks?.addEventListener('mouseleave', () => {
+    const active = navLinks.querySelector('.nav-link.active');
+    if (active) moveIndicator(active, false);
+  });
+
+  /* Hamburger toggle with slide-down animation */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
+
   hamburger?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
-    mobileMenu?.classList.toggle('flex');
+    const isOpen = mobileMenu?.classList.contains('is-open');
+    hamburger.classList.toggle('open', !isOpen);
+    if (isOpen) {
+      mobileMenu?.classList.remove('is-open');
+      setTimeout(() => {
+        mobileMenu?.classList.add('hidden-mobile');
+      }, 300);
+    } else {
+      mobileMenu?.classList.remove('hidden-mobile');
+      requestAnimationFrame(() => mobileMenu?.classList.add('is-open'));
+    }
   });
+
+  /* Compact nav on scroll */
+  const nav = document.getElementById('main-nav');
+  const navInner = document.getElementById('nav-inner');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav?.classList.add('scrolled');
+      navInner?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+      navInner?.classList.remove('scrolled');
+    }
+  }, { passive: true });
 </script>
