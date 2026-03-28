@@ -1,0 +1,126 @@
+---
+// ZonesMap.astro — Leaflet.js + fallback <noscript> Google Maps
+// Aucune clé API requise
+---
+
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+
+<div class="rounded-2xl overflow-hidden shadow-[0_4px_48px_rgba(26,28,30,0.08)] border border-outline-variant">
+
+  <!-- Carte Leaflet -->
+  <div
+    id="zones-map"
+    class="w-full h-[300px] md:h-[450px] bg-surface-container"
+    aria-label="Carte interactive de la zone d'intervention AYL Cleaning"
+  ></div>
+
+  <!-- Fallback si JavaScript est désactivé -->
+  <noscript>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d80462.69!2d4.3517!3d50.8503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1700000000000!5m2!1sfr!2sbe"
+      width="100%"
+      height="450"
+      style="border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Zone d'intervention AYL Cleaning — Bruxelles et périphérie"
+    ></iframe>
+  </noscript>
+
+</div>
+
+<p class="text-on-surface-variant/60 text-xs mt-3">
+  Déplacement gratuit dans un rayon de 25 km autour de Bruxelles. Hors zone : nous contacter pour estimer les frais de déplacement.
+</p>
+
+<!-- Leaflet JS -->
+<script
+  is:inline
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs="
+  crossorigin=""
+></script>
+
+<script is:inline>
+(function () {
+  if (typeof L === 'undefined') return;
+
+  const BXL = [50.8503, 4.3517];
+
+  const map = L.map('zones-map', {
+    center: BXL,
+    zoom: 9,
+    scrollWheelZoom: false,
+    attributionControl: true,
+  });
+
+  // Tuiles OpenStreetMap — gratuit, pas de clé API
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Zone d'intervention — cercle de 25 km
+  L.circle(BXL, {
+    radius: 25000,
+    color: '#00639b',
+    fillColor: '#00639b',
+    fillOpacity: 0.08,
+    weight: 2,
+    opacity: 0.45,
+    dashArray: '6 4',
+  }).addTo(map);
+
+  // Icônes custom cohérentes avec le thème du site
+  function makeIcon(bg) {
+    return L.divIcon({
+      className: '',
+      html:
+        '<div style="width:28px;height:28px;background:' + bg + ';border:3px solid #fff;' +
+        'border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.18);"></div>',
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+      popupAnchor: [0, -18],
+    });
+  }
+
+  var iconMain = makeIcon('#00639b'); // primary — Bruxelles
+  var iconPeri = makeIcon('#4a6080'); // secondary — périphérie
+
+  var markers = [
+    { ll: BXL,              label: 'Bruxelles', sub: '19 communes',     main: true  },
+    { ll: [50.7093, 4.3987], label: 'Waterloo',  sub: 'Brabant wallon', main: false },
+    { ll: [50.9282, 4.4131], label: 'Vilvorde',  sub: 'Brabant flamand',main: false },
+    { ll: [50.8850, 4.4717], label: 'Zaventem',  sub: 'Brabant flamand',main: false },
+    { ll: [50.8407, 4.2430], label: 'Dilbeek',   sub: 'Brabant flamand',main: false },
+    { ll: [50.9357, 4.3818], label: 'Grimbergen',sub: 'Brabant flamand',main: false },
+  ];
+
+  markers.forEach(function (m) {
+    L.marker(m.ll, { icon: m.main ? iconMain : iconPeri })
+      .addTo(map)
+      .bindPopup(
+        '<strong style="font-family:Manrope,sans-serif;color:#1a1c1e;">' + m.label + '</strong>' +
+        '<br><span style="font-size:12px;color:#44474f;">' + m.sub + '</span>',
+        { closeButton: false, maxWidth: 180 }
+      );
+  });
+})();
+</script>
+
+<style>
+  .leaflet-container { background: #f2f4f4; font-family: Inter, sans-serif; }
+  .leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(26,28,30,0.12);
+    border: 1px solid #c4c7c5;
+  }
+  .leaflet-popup-tip { background: #fff; }
+</style>
