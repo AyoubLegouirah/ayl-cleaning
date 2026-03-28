@@ -52,15 +52,20 @@ import Head from '../components/Head.astro';
               <p id="err-tel" class="hidden text-red-500 text-xs ml-1"></p>
             </div>
           </div>
-          <div class="space-y-2">
-            <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Service souhaité</label>
-            <select id="form-service" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface transition-all outline-none">
-              <option value="">Choisir un service</option>
-              <option>Nettoyage de vitres</option>
-              <option>Nettoyage de canapés</option>
-              <option>Plusieurs services</option>
-            </select>
-          </div>
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Service souhaité</label>
+          <div class="relative">
+          <select id="form-service" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 pl-5 pr-12 text-on-surface transition-all outline-none appearance-none">
+            <option value="">Choisir un service</option>
+            <option>Nettoyage de vitres</option>
+            <option>Nettoyage de canapés</option>
+            <option>Plusieurs services</option>
+          </select>
+          <span class="pointer-events-none absolute right-4 top-[45%] -translate-y-1/2 text-on-surface-variant">
+      &#8964;
+    </span>
+  </div>
+</div>
           <div class="space-y-2">
             <label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Message</label>
             <textarea id="form-message" class="w-full bg-surface-container focus:ring-2 focus:ring-primary/30 rounded-xl py-4 px-5 text-on-surface placeholder:text-on-surface-variant/50 transition-all resize-none outline-none" placeholder="Décrivez votre besoin, surface approximative, commune..." rows="5"></textarea>
