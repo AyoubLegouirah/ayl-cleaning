@@ -2,32 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Head from '../components/Head.astro';
-
-const bruxelles19 = [
-  "Anderlecht", "Auderghem", "Berchem-Sainte-Agathe", "Bruxelles-Ville",
-  "Etterbeek", "Evere", "Forest", "Ganshoren", "Ixelles", "Jette",
-  "Koekelberg", "Laeken", "Molenbeek-Saint-Jean", "Saint-Gilles",
-  "Saint-Josse-ten-Noode", "Schaerbeek", "Uccle", "Watermael-Boitsfort",
-  "Woluwe-Saint-Lambert", "Woluwe-Saint-Pierre",
-];
-
-const brabantWallon = [
-  { nom: "Waterloo", note: "Accès rapide via ring" },
-  { nom: "La Hulpe", note: null },
-  { nom: "Rixensart", note: null },
-  { nom: "Lasne", note: null },
-  { nom: "Genval", note: "Entité de Rixensart" },
-];
-
-const brabantFlamand = [
-  { nom: "Vilvorde", note: null },
-  { nom: "Zaventem", note: "Proche aéroport" },
-  { nom: "Tervuren", note: null },
-  { nom: "Wezembeek-Oppem", note: null },
-  { nom: "Kraainem", note: null },
-  { nom: "Dilbeek", note: null },
-  { nom: "Grimbergen", note: null },
-];
+import { zones } from '../data/communes';
 ---
 
 <!DOCTYPE html>
@@ -54,7 +29,7 @@ const brabantFlamand = [
         <span class="text-primary">Bruxelles & périphérie</span>
       </h1>
       <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-8">
-        AYL Cleaning intervient à domicile pour le nettoyage de canapés et de vitres dans un rayon de 20 km autour de Bruxelles : les 19 communes de la Région bruxelloise, plusieurs communes du Brabant wallon et du Brabant flamand.
+        AYL Cleaning intervient à domicile dans un rayon de 20 km autour de Bruxelles : les 19 communes de la Région bruxelloise, plusieurs communes du Brabant wallon et du Brabant flamand.
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
@@ -88,87 +63,53 @@ const brabantFlamand = [
     </div>
   </section>
 
-  <!-- ZONES PAR RÉGION -->
+  <!-- ZONES PAR SERVICE : NETTOYAGE DE CANAPÉ -->
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto">
-      <h2 class="font-headline text-3xl font-extrabold tracking-tighter mb-4">
-        Communes couvertes
-      </h2>
-      <p class="text-on-surface-variant mb-16 max-w-2xl">
-        Retrouvez ci-dessous l'ensemble des communes où nous intervenons. Vous ne trouvez pas votre localité ? Contactez-nous — nous étudions chaque demande hors zone.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Bruxelles -->
-        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
-              <span class="material-symbols-outlined text-xl">location_city</span>
-            </div>
-            <div>
-              <h3 class="font-headline font-bold text-lg text-on-surface">Bruxelles</h3>
-              <p class="text-xs text-on-surface-variant">19 communes</p>
-            </div>
-          </div>
-          <ul class="space-y-2">
-            {bruxelles19.map(commune => (
-              <li class="flex items-center gap-2 text-sm text-on-surface-variant">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></span>
-                {commune}
-              </li>
-            ))}
-          </ul>
+      <div class="flex items-center gap-4 mb-6">
+        <div class="bg-primary/10 text-primary w-12 h-12 rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl">chair</span>
         </div>
-
-        <!-- Brabant wallon -->
-        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
-              <span class="material-symbols-outlined text-xl">park</span>
-            </div>
-            <div>
-              <h3 class="font-headline font-bold text-lg text-on-surface">Brabant wallon</h3>
-              <p class="text-xs text-on-surface-variant">Sud de Bruxelles</p>
-            </div>
-          </div>
-          <ul class="space-y-3">
-            {brabantWallon.map(({ nom, note }) => (
-              <li class="flex items-start gap-2 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 mt-1.5"></span>
-                <div>
-                  <span class="text-on-surface-variant">{nom}</span>
-                  {note && <span class="block text-xs text-on-surface-variant/50">{note}</span>}
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div>
+          <h2 class="font-headline text-3xl font-extrabold tracking-tighter">Nettoyage de canapé</h2>
+          <p class="text-on-surface-variant text-sm">Sélectionnez votre région pour voir les communes couvertes</p>
         </div>
+      </div>
 
-        <!-- Brabant flamand -->
-        <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
-              <span class="material-symbols-outlined text-xl">forest</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        {zones.map(zone => (
+          <div class="bg-surface-container-lowest rounded-2xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">location_city</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-lg text-on-surface">{zone.region}</h3>
+                <p class="text-xs text-on-surface-variant">{zone.villes.length} communes</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-headline font-bold text-lg text-on-surface">Brabant flamand</h3>
-              <p class="text-xs text-on-surface-variant">Périphérie nord et est</p>
-            </div>
+            <ul class="space-y-2 mb-6">
+              {zone.villes.map(ville => (
+                <li>
+                  <a
+                    href={`/canape/${zone.slug}/${ville.slug}`}
+                    class="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors group"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 group-hover:bg-primary transition-colors"></span>
+                    {ville.nom}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`/canape/${zone.slug}`}
+              class="inline-flex items-center gap-2 text-primary font-headline font-bold text-sm hover:underline"
+            >
+              Voir {zone.region}
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
           </div>
-          <ul class="space-y-3">
-            {brabantFlamand.map(({ nom, note }) => (
-              <li class="flex items-start gap-2 text-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 mt-1.5"></span>
-                <div>
-                  <span class="text-on-surface-variant">{nom}</span>
-                  {note && <span class="block text-xs text-on-surface-variant/50">{note}</span>}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
@@ -210,7 +151,7 @@ const brabantFlamand = [
           Vous êtes dans notre zone ?
         </h2>
         <p class="text-on-primary/80 text-lg md:text-xl max-w-2xl mx-auto">
-          Demandez un devis gratuit sous 24h. Intervention à domicile pour le nettoyage de canapés et de vitres.
+          Demandez un devis gratuit sous 24h. Intervention à domicile pour le nettoyage de vos canapés.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="/contact" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-extrabold text-xl hover:scale-105 transition-transform duration-200">
