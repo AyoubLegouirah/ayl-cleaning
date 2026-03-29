@@ -67,7 +67,7 @@ const metaDescription = `Nettoyage de canapé à ${ville.nom} — AYL Cleaning i
         <span class="text-primary">à {ville.nom}</span>
       </h1>
       <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
-        AYL Cleaning intervient directement à votre domicile à {ville.nom} pour le nettoyage professionnel de vos canapés, fauteuils et sièges. Détachage des taches, désinfection, traitement anti-acariens — résultat garanti, séchage en 2 à 4 heures.
+        AYL Cleaning intervient à {ville.nom} pour le nettoyage professionnel de canapés à domicile. Que vous habitiez en appartement, maison ou studio à {ville.nom}, notre technicien se déplace avec tout le matériel nécessaire — détachage, désinfection et traitement anti-acariens inclus. Devis gratuit sous 24h.
       </p>
       <div class="flex gap-4 flex-wrap">
         <a href="/contact" class="bg-gradient-to-br from-primary to-[#004d7a] text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:shadow-[0_4px_24px_rgba(0,99,155,0.25)] transition-all duration-200">
@@ -126,8 +126,55 @@ const metaDescription = `Nettoyage de canapé à ${ville.nom} — AYL Cleaning i
     </div>
   </section>
 
-  <!-- TARIFS -->
+  <!-- NOTRE INTERVENTION À {ville.nom} -->
   <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+        Nettoyage de canapé à {ville.nom} — <span class="text-primary">comment ça se passe ?</span>
+      </h2>
+      <p class="text-on-surface-variant leading-relaxed mb-10 max-w-3xl">
+        Vous êtes à {ville.nom} et votre canapé a besoin d'un nettoyage en profondeur ? AYL Cleaning intervient directement chez vous, sans déplacement de votre canapé. Notre technicien arrive avec sa machine d'extraction professionnelle, ses nettoyants enzymatiques et traite tissu, microfibre, velours ou cuir en 45 minutes à 1h30 selon la taille. Pas besoin de vous déplacer ni de louer du matériel : nous apportons tout pour un résultat professionnel à domicile.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          {
+            step: "01",
+            icon: "search",
+            title: "Inspection",
+            desc: `Examen du tissu et des taches à ${ville.nom}. Test de compatibilité des produits sur une zone discrète. Identification des fibres : tissu, microfibre, velours, cuir ou similicuir.`
+          },
+          {
+            step: "02",
+            icon: "local_laundry_service",
+            title: "Détachage",
+            desc: "Application ciblée d'un détachant enzymatique sur chaque tache. Le produit pénètre dans les fibres pour dissoudre les salissures organiques — vin, café, urine, graisses — sans abîmer les textiles."
+          },
+          {
+            step: "03",
+            icon: "water_drop",
+            title: "Extraction",
+            desc: "Notre machine injecte une fine brume de nettoyant dans les rembourrages et aspire immédiatement l'eau sale. Cette désinfection en profondeur élimine acariens, bactéries et odeurs incrustées."
+          },
+          {
+            step: "04",
+            icon: "air",
+            title: "Séchage",
+            desc: "Grâce à la technique d'extraction à faible humidité, le canapé est sec en 2 à 4 heures. Pas de moisissures, pas d'odeurs résiduelles. Réutilisable le jour même."
+          },
+        ].map(item => (
+          <div class="relative bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+            <span class="text-primary/20 font-headline font-extrabold text-6xl absolute top-4 right-6">{item.step}</span>
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-headline font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS -->
+  <section class="py-24 px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
         Tarifs — <span class="text-primary">Nettoyage canapé à {ville.nom}</span>
@@ -150,8 +197,46 @@ const metaDescription = `Nettoyage de canapé à ${ville.nom} — AYL Cleaning i
     </div>
   </section>
 
-  <!-- LIEN RETOUR + AUTRES COMMUNES -->
+  <!-- FAQ LOCALE -->
   <section class="py-16 px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-headline text-2xl font-extrabold mb-8 tracking-tighter">
+        Questions fréquentes — <span class="text-primary">{ville.nom}</span>
+      </h2>
+      <div class="space-y-4">
+        <details class="bg-surface-container-lowest rounded-xl group shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
+          <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
+            <span>Intervenez-vous à domicile à {ville.nom} ?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="px-8 pb-6 text-on-surface-variant text-sm leading-relaxed">
+            Oui, AYL Cleaning intervient directement à votre domicile à {ville.nom}. Déplacement gratuit, sans frais supplémentaires. Nous couvrons {ville.nom} et toute la région {zone.region}. Notre technicien se déplace avec tout le matériel nécessaire pour traiter vos canapés en tissu, microfibre, velours ou cuir sur place.
+          </p>
+        </details>
+        <details class="bg-surface-container-lowest rounded-xl group shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
+          <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
+            <span>Quel délai pour un rendez-vous à {ville.nom} ?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="px-8 pb-6 text-on-surface-variant text-sm leading-relaxed">
+            Nous intervenons généralement sous 48h à {ville.nom}. Contactez-nous via WhatsApp pour fixer un créneau rapidement, en semaine ou le week-end. Pour les demandes urgentes (taches fraîches, état avant location), signalez-le lors de votre prise de contact et nous ferons notre maximum pour intervenir dans la journée.
+          </p>
+        </details>
+        <details class="bg-surface-container-lowest rounded-xl group shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
+          <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
+            <span>Quels types de textiles et matières traitez-vous ?</span>
+            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="px-8 pb-6 text-on-surface-variant text-sm leading-relaxed">
+            Nous traitons tous les types de canapés courants : tissu, microfibre, velours, cuir, similicuir et tissus synthétiques. Avant chaque intervention, notre technicien effectue un test de compatibilité du détachant sur une zone discrète pour garantir l'intégrité des fibres. Les rembourrages sont aussi traités en profondeur pour éliminer acariens et odeurs.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIEN RETOUR + AUTRES COMMUNES -->
+  <section class="py-8 px-8">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>

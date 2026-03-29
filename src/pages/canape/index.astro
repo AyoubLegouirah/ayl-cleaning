@@ -2,16 +2,14 @@
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Head from '../../components/Head.astro';
-import { zones } from '../../data/communes';
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <Head
-    title="Nettoyage de canapé Bruxelles | AYL Cleaning"
-    description="Nettoyage professionnel de canapé à Bruxelles à domicile. Tissu, cuir, velours. Résultat garanti. Intervention rapide 7j/7 dans toute la région bruxelloise."
-    canonical="/canape"
+    title="Nettoyage de canapé à Bruxelles — AYL Cleaning"
+    description="Nettoyage professionnel de canapés à Bruxelles. Détachage, désinfection, traitement anti-acariens. Produits écologiques, séchage rapide. Intervention 7j/7. Devis gratuit — +32 488 33 89 52."
   />
 </head>
 <body class="bg-surface text-on-surface font-body">
@@ -32,7 +30,7 @@ import { zones } from '../../data/communes';
     </div>
     <div class="relative z-20 pt-32 pb-20 px-8 max-w-7xl mx-auto w-full">
       <span class="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4 block">
-        🛋️ Nettoyage de canapés — Bruxelles & périphérie
+        🛋️ Nettoyage de canapés
       </span>
       <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface leading-tight max-w-3xl mb-6 tracking-tighter">
         Nettoyage de canapé<br/>
@@ -78,7 +76,7 @@ import { zones } from '../../data/communes';
     </div>
   </section>
 
-  <!-- CONTENU SEO -->
+  <!-- CONTENU SEO — Pourquoi -->
   <section class="py-24 px-8 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
       <div>
@@ -89,7 +87,7 @@ import { zones } from '../../data/communes';
           Un canapé utilisé quotidiennement accumule en moyenne <strong class="text-on-surface">des millions d'acariens</strong>, des allergènes, des salissures et des odeurs de transpiration. Un simple aspirateur ne suffit pas — il faut un lavage en profondeur des fibres textiles et des rembourrages.
         </p>
         <p class="text-on-surface-variant leading-relaxed mb-4">
-          Notre prestation comprend un <strong class="text-on-surface">détachage ciblé</strong> des taches tenaces (vin, café, urine, sang, graisses), un traitement nettoyant appliqué en profondeur dans les fibres, puis une extraction à faible humidité pour un séchage rapide. Les textiles — tissu, microfibre, velours, moquette — retrouvent leur propreté d'origine.
+          Notre prestation de nettoyage comprend un <strong class="text-on-surface">détachage ciblé</strong> des taches tenaces (vin, café, urine, sang, graisses), un traitement nettoyant appliqué en profondeur dans les fibres, puis une extraction à faible humidité pour un séchage rapide. Les textiles — tissu, microfibre, velours, moquette — retrouvent leur propreté et leur éclat d'origine.
         </p>
         <p class="text-on-surface-variant leading-relaxed">
           Nous recommandons un lavage tous les 12 à 18 mois pour les foyers avec enfants ou animaux, et tous les 2 ans pour les autres. Un entretien régulier prolonge la durée de vie de vos sièges et élimine les mauvaises odeurs durablement.
@@ -154,8 +152,32 @@ import { zones } from '../../data/communes';
     </div>
   </section>
 
+  <!-- PROCESSUS -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter text-center">
+        Comment se passe <span class="text-primary">l'intervention ?</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: "01", icon: "phone_in_talk", title: "Devis gratuit", desc: "Contactez-nous par téléphone ou WhatsApp. Réponse sous 24h avec un prix fixe, sans surprise." },
+          { step: "02", icon: "calendar_month", title: "Rendez-vous", desc: "On fixe un créneau à votre convenance, en semaine ou le week-end, de 9h à 17h." },
+          { step: "03", icon: "cleaning_services", title: "Lavage à domicile", desc: "Notre technicien se déplace avec tout le matériel. Détachage, lavage et désinfection en 45 min à 1h30." },
+          { step: "04", icon: "check_circle", title: "Résultat immédiat", desc: "Canapé propre, désinfecté, sans mauvaises odeurs. Sec en 2 à 4 heures, réutilisable le jour même." },
+        ].map(item => (
+          <div class="relative bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+            <span class="text-primary/20 font-headline font-extrabold text-6xl absolute top-4 right-6">{item.step}</span>
+            <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+            <h3 class="font-headline font-bold text-lg mb-3">{item.title}</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- TARIFS -->
-  <section class="py-24 px-8">
+  <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
         Tarifs indicatifs —<span class="text-primary"> Nettoyage canapé</span>
@@ -178,37 +200,189 @@ import { zones } from '../../data/communes';
     </div>
   </section>
 
-  <!-- NOS ZONES D'INTERVENTION -->
+  <!-- GUIDE DES TACHES -->
   <section class="bg-surface-container-low py-24 px-8">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
-        Nos zones d'intervention — <span class="text-primary">Nettoyage de canapé</span>
+        Guide des taches — <span class="text-primary">comment réagir ?</span>
       </h2>
       <p class="text-on-surface-variant mb-12 max-w-2xl">
-        Nous intervenons à Bruxelles et dans sa périphérie. Sélectionnez votre région pour découvrir les communes couvertes.
+        Chaque type de tache nécessite un traitement différent. Voici les bons réflexes selon la nature de la salissure — et quand faire appel à un professionnel.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {zones.map(zone => (
-          <a href={`/canape/${zone.slug}`} class="group bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)] hover:shadow-[0_8px_48px_rgba(26,28,30,0.08)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-4">
-            <div class="flex items-center gap-3">
-              <div class="bg-primary/10 text-primary w-10 h-10 rounded-xl flex items-center justify-center">
-                <span class="material-symbols-outlined text-xl">location_on</span>
-              </div>
-              <h3 class="font-headline font-bold text-lg text-on-surface group-hover:text-primary transition-colors">{zone.region}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: "wine_bar",
+            titre: "Taches de vin, café, thé",
+            desc: "Réagissez immédiatement : absorbez le maximum avec une serviette propre sèche sans frotter. Versez un peu d'eau froide pour diluer, puis laissez agir un détachant textile quelques minutes avant d'essuyer avec un chiffon propre. Ne chauffez jamais une tache fraîche — la chaleur la fixe dans les fibres. Si la tache est sèche, un nettoyant enzymatique professionnel sera nécessaire."
+          },
+          {
+            icon: "pets",
+            titre: "Taches d'urine et odeurs d'animaux",
+            desc: "Absorbez immédiatement avec du papier absorbant. Évitez l'eau de Javel ou l'ammoniaque qui peuvent abîmer les textiles et attirer à nouveau l'animal. Appliquez un détachant enzymatique spécifique urine, laissez agir 15 minutes puis essuyez avec un chiffon humide et séchez. Pour les odeurs tenaces incrustées dans les rembourrages, seul un lavage professionnel avec extraction sera vraiment efficace."
+          },
+          {
+            icon: "fastfood",
+            titre: "Taches de graisses alimentaires",
+            desc: "Raclez délicatement l'excédent avec un couteau ou une carte. Saupoudrez du sel ou de la fécule pour absorber la graisse, laissez agir 10 minutes puis brossez. Appliquez ensuite un détergent dégraissant dilué dans un litre d'eau tiède avec un chiffon propre. Rincez avec un chiffon humide à l'eau froide. Les textiles lavables peuvent passer en machine à laver à basse température."
+          },
+          {
+            icon: "colorize",
+            titre: "Taches d'encre, feutre, stylo",
+            desc: "Tamponnez avec un chiffon imbibé d'alcool ménager ou d'eau oxygénée — testez d'abord sur une zone cachée pour vérifier que le tissu ne décolore pas. Travaillez de l'extérieur vers le centre de la tache pour éviter de l'étaler. L'alcool agit comme solvant sur l'encre. Pour le cuir et le similicuir, utilisez uniquement des lingettes nettoyantes spéciales cuir ou de la cire adaptée. En cas de doute, appelez un nettoyeur professionnel."
+          },
+          {
+            icon: "water",
+            titre: "Taches d'eau et auréoles",
+            desc: "Paradoxalement, les auréoles d'eau sont parmi les plus difficiles à éliminer seul. Humidifiez uniformément toute la zone avec une éponge propre pour effacer la limite de l'auréole, puis séchez rapidement avec un chiffon sec. Vous pouvez ajouter quelques gouttes de vinaigre blanc dans l'eau pour neutraliser le calcaire. Si l'auréole persiste, un nettoyant textile très efficace appliqué par un professionnel est la seule solution durable."
+          },
+          {
+            icon: "brush",
+            titre: "Taches de boue et terre",
+            desc: "Ne nettoyez surtout pas à l'état humide — la boue fraîche s'incruste dans les fibres si on frotte. Laissez sécher complètement, puis brossez ou aspirez pour enlever la terre sèche. Appliquez ensuite un produit nettoyant textile avec une éponge humide et frottez délicatement dans le sens des fibres. Rincez avec un chiffon propre. Les produits d entretien du commerce suffisent en général pour ce type de salissure."
+          },
+        ].map(item => (
+          <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)] flex gap-6 items-start">
+            <span class="material-symbols-outlined text-primary text-3xl shrink-0">{item.icon}</span>
+            <div>
+              <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
             </div>
-            <p class="text-on-surface-variant text-sm">{zone.villes.length} communes couvertes</p>
-            <div class="flex flex-wrap gap-2">
-              {zone.villes.slice(0, 4).map(v => (
-                <span class="text-xs bg-surface-container px-3 py-1 rounded-full text-on-surface-variant">{v.nom}</span>
-              ))}
-              {zone.villes.length > 4 && (
-                <span class="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">+{zone.villes.length - 4} communes</span>
-              )}
-            </div>
-            <span class="text-primary text-sm font-bold font-headline group-hover:underline">Voir les communes →</span>
-          </a>
+          </div>
         ))}
       </div>
+      <div class="mt-8 bg-primary/5 rounded-xl p-8">
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          <strong class="text-on-surface">Important :</strong> les produits ménagers courants (savon noir, cristaux de soude, liquide-vaisselle, eau de Javel) peuvent donner des résultats sur les taches fraîches mais risquent d'abîmer les fibres textiles et le rembourrage sur le long terme. Pour un résultat professionnel durable, nos nettoyants enzymatiques biodégradables pénètrent en profondeur sans détériorer vos textiles — contactez AYL Cleaning pour un devis gratuit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNES QUE VOTRE CANAPÉ A BESOIN D'UN PRO -->
+  <section class="py-24 px-8 max-w-7xl mx-auto">
+    <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+      Votre canapé a besoin d'un <span class="text-primary">nettoyage professionnel</span> si…
+    </h2>
+    <p class="text-on-surface-variant mb-12 max-w-2xl">
+      Un canapé peut sembler propre en surface et pourtant abriter des milliers d'acariens, bactéries et allergènes dans ses fibres. Voici les signes qui ne trompent pas.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { icon: "sick", titre: "Allergies ou irritations", desc: "Vous éternuez, vos yeux piquent ou votre peau réagit après avoir été assis sur le canapé ? Ce sont les acariens et allergènes logés dans les fibres textiles qui en sont probablement la cause." },
+        { icon: "sentiment_dissatisfied", titre: "Mauvaises odeurs persistantes", desc: "Une odeur de transpiration, de tabac, d'urine ou d'animaux qui revient malgré l'aération ? Les molécules odorantes sont piégées dans les rembourrages — seul un lavage en profondeur les élimine vraiment." },
+        { icon: "opacity", titre: "Taches tenaces incrustées", desc: "Du café, du vin, de la sauce ou de l'urine séchée qui résiste à tous vos produits ménagers ? Les taches incrustées dans les fibres nécessitent un détachant professionnel et une extraction puissante." },
+        { icon: "pets", titre: "Présence d'animaux ou d'enfants", desc: "Les foyers avec animaux ou jeunes enfants accumulent poils, salissures et bactéries bien plus vite. Un nettoyage et une désinfection réguliers sont indispensables pour un environnement sain." },
+        { icon: "palette", titre: "Couleurs ternes et tissu terne", desc: "Votre canapé a perdu son éclat d'origine ? Les fibres textiles encrassées par la poussière et les salissures donnent un aspect vieilli. Un lavage professionnel ravive les couleurs et redonne vie au tissu." },
+        { icon: "calendar_month", titre: "Plus de 12 mois sans nettoyage", desc: "Même sans taches visibles, un canapé utilisé quotidiennement accumule en moyenne 100 000 acariens par mètre carré après un an. Un nettoyage annuel est recommandé pour un intérieur sain." },
+      ].map(item => (
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_48px_rgba(26,28,30,0.04)]">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block">{item.icon}</span>
+          <h3 class="font-headline font-bold text-lg mb-3">{item.titre}</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- POURQUOI PAS FAIRE SOI-MÊME -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="font-headline text-3xl font-extrabold mb-6 tracking-tighter">
+          Pourquoi le nettoyage <span class="text-primary">amateur ne suffit pas ?</span>
+        </h2>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Un aspirateur ménager n'aspire que la surface du tissu — il ne pénètre pas dans les fibres ni dans les rembourrages où s'accumulent acariens, bactéries et salissures. Les produits du commerce comme la lessive, le savon ou les détergents ménagers peuvent décolorer les textiles, laisser des résidus collants ou endommager les fibres délicates comme le velours ou la microfibre.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed mb-4">
+          Rincer un canapé à la maison est quasiment impossible — les produits s'incrustent et attirent encore plus de poussière. Sécher un canapé mal rincé favorise le développement de moisissures et d'odeurs encore plus tenaces.
+        </p>
+        <p class="text-on-surface-variant leading-relaxed">
+          Notre machine d'extraction professionnelle injecte le nettoyant enzymatique directement dans les fibres, le pulvérise sur les taches, et aspire immédiatement l'eau sale avec toutes les salissures. Résultat : un canapé vraiment propre, sec en 2 à 4 heures, sans résidus ni odeurs.
+        </p>
+      </div>
+      <div class="space-y-4">
+        {[
+          { label: "Aspirateur ménager", pro: false, desc: "N'atteint pas les fibres en profondeur ni les rembourrages" },
+          { label: "Produits ménagers (lessive, savon)", pro: false, desc: "Risque de décoloration, résidus collants, fibres abîmées" },
+          { label: "Séchage lent et incomplet", pro: false, desc: "Favorise les moisissures et les mauvaises odeurs persistantes" },
+          { label: "Extraction professionnelle AYL", pro: true, desc: "Nettoyage en profondeur, séchage rapide, résultat garanti" },
+          { label: "Nettoyants enzymatiques pro", pro: true, desc: "Dissolvent taches et odeurs sans abîmer les textiles" },
+          { label: "Désinfection & anti-acariens", pro: true, desc: "Élimine bactéries, acariens et allergènes pour un intérieur sain" },
+        ].map(item => (
+          <div class={`flex items-center gap-4 rounded-xl px-6 py-4 ${item.pro ? 'bg-primary/5' : 'bg-surface-container shadow-[0_2px_8px_rgba(26,28,30,0.04)]'}`}>
+            <span class={`material-symbols-outlined text-xl ${item.pro ? 'text-primary' : 'text-red-400'}`}>
+              {item.pro ? 'check_circle' : 'cancel'}
+            </span>
+            <div>
+              <p class={`text-sm font-bold ${item.pro ? 'text-on-surface' : 'text-on-surface-variant'}`}>{item.label}</p>
+              <p class="text-on-surface-variant text-xs">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-12 tracking-tighter">
+        Questions fréquentes —<span class="text-primary"> Nettoyage canapé</span>
+      </h2>
+      <div class="space-y-4">
+        {[
+          {
+            q: "Combien de temps faut-il pour que le canapé sèche ?",
+            a: "Entre 2 et 4 heures selon le tissu et la ventilation de la pièce. Notre technique d'extraction à faible humidité injecte très peu d'eau dans les fibres et aspire immédiatement. Vous pouvez réutiliser votre canapé le jour même."
+          },
+          {
+            q: "Quels types de taches pouvez-vous éliminer ?",
+            a: "Nous traitons toutes les salissures courantes : taches de vin, café, thé, urine (enfants et animaux), sang, graisses alimentaires et odeurs tenaces. Nous utilisons des nettoyants enzymatiques spécialisés qui dissolvent les taches en profondeur sans abîmer les textiles."
+          },
+          {
+            q: "Vous vous déplacez à domicile à Bruxelles ?",
+            a: "Oui, nous intervenons exclusivement à domicile à Bruxelles et dans toute sa périphérie (Brabant wallon : Waterloo, La Hulpe, Rixensart… — Brabant flamand : Vilvorde, Zaventem, Tervuren…) dans un rayon de 20 km."
+          },
+          {
+            q: "Les produits utilisés sont-ils sans danger pour mes enfants et animaux ?",
+            a: "Absolument. Tous nos nettoyants sont homologués, biodégradables et sans solvants toxiques. Ils ne laissent aucun résidu chimique dans les fibres. Votre famille peut utiliser le canapé dès qu'il est sec."
+          },
+          {
+            q: "Faut-il préparer quoi que ce soit avant l'intervention ?",
+            a: "Non, notre technicien arrive avec tout le matériel nécessaire. Il suffit de dégager les coussins du canapé si possible. La prestation dure entre 45 minutes et 1h30 selon la taille du canapé et le nombre de taches à traiter."
+          },
+          {
+            q: "Comment obtenir un devis ?",
+            a: "Appelez-nous au +32 488 33 89 52 ou envoyez-nous un message WhatsApp avec une photo de votre canapé. Nous vous répondons sous 24h avec un prix fixe et sans surprise."
+          },
+        ].map((item) => (
+          <details class="bg-surface-container-lowest rounded-xl group shadow-[0_2px_16px_rgba(26,28,30,0.04)]">
+            <summary class="px-8 py-6 font-headline font-bold cursor-pointer flex justify-between items-center list-none">
+              <span>{item.q}</span>
+              <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+            </summary>
+            <p class="px-8 pb-6 text-on-surface-variant text-sm leading-relaxed">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section class="bg-surface-container-low py-24 px-8">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="font-headline text-3xl font-extrabold mb-4 tracking-tighter">
+        Zones d'intervention — <span class="text-primary">Bruxelles & périphérie</span>
+      </h2>
+      <p class="text-on-surface-variant mb-8 max-w-2xl">
+        Nous intervenons pour le nettoyage de canapés à Bruxelles (19 communes), dans le Brabant wallon (Waterloo, La Hulpe, Rixensart, Lasne, Genval) et le Brabant flamand (Vilvorde, Zaventem, Tervuren…). Déplacement gratuit dans un rayon de 20 km.
+      </p>
+      <a href="/zones-intervention" class="inline-flex items-center gap-2 bg-surface-container-lowest text-primary font-headline font-bold px-6 py-3 rounded-full shadow-[0_2px_8px_rgba(26,28,30,0.06)] hover:bg-surface-container-highest transition-all duration-200">
+        <span class="material-symbols-outlined text-base">map</span>
+        Voir toutes les zones couvertes
+      </a>
     </div>
   </section>
 
