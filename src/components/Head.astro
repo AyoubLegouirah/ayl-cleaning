@@ -7,7 +7,7 @@ interface Props {
 
 const {
   title,
-  description = "AYL Cleaning — Nettoyage professionnel de canapés et de vitres à Bruxelles et alentours. Intervention à domicile 7j/7. Devis gratuit en 24h — +32 488 33 89 52.",
+  description = "AYL Cleaning — Nettoyage professionnel de canapés à Bruxelles et périphérie. Intervention à domicile 7j/7. Devis gratuit en 24h — +32 488 33 89 52.",
   canonical,
 } = Astro.props;
 
@@ -22,9 +22,9 @@ const schemaLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "AYL Cleaning",
-  "description": "Nettoyage professionnel de canapés et de vitres à Bruxelles et périphérie. Intervention à domicile 7j/7.",
+  "description": "Nettoyage professionnel de canapés à Bruxelles et périphérie. Intervention à domicile 7j/7.",
   "url": "https://aylcleaning.be",
-  "image": "https://aylcleaning.be/og-image.jpg",
+  "image": "https://aylcleaning.be/logo.png",
   "telephone": "+32488338952",
   "address": {
     "@type": "PostalAddress",
@@ -64,14 +64,6 @@ const schemaLocalBusiness = {
           "description": "Nettoyage professionnel de canapés, fauteuils et sièges à domicile à Bruxelles et alentours."
         }
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Nettoyage de vitres",
-          "description": "Lavage professionnel de vitres, fenêtres et baies vitrées à domicile à Bruxelles et alentours."
-        }
-      }
     ]
   },
   "sameAs": ["https://wa.me/32488338952"]
@@ -95,16 +87,16 @@ const schemaLocalBusiness = {
 <meta property="og:url" content={pageUrl}/>
 <meta property="og:site_name" content="AYL Cleaning"/>
 <meta property="og:locale" content="fr_BE"/>
-<meta property="og:image" content="https://aylcleaning.be/og-image.jpg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
+<meta property="og:image" content="https://aylcleaning.be/logo.png"/>
+<meta property="og:image:width" content="512"/>
+<meta property="og:image:height" content="512"/>
 <meta property="og:image:alt" content="AYL Cleaning — Nettoyage professionnel à Bruxelles"/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content={fullTitle}/>
 <meta name="twitter:description" content={description}/>
-<meta name="twitter:image" content="https://aylcleaning.be/og-image.jpg"/>
+<meta name="twitter:image" content="https://aylcleaning.be/logo.png"/>
 
 <!-- SEO local -->
 <meta name="geo.region" content="BE-BRU"/>

@@ -1,27 +1,21 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
 
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
-const { 
-  title, 
-  description = "AYL Cleaning — Nettoyage professionnel de vitres, canapés et après travaux à Bruxelles. Devis gratuit en 24h." 
-} = Astro.props;
+const { title, description, canonical } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{title} | AYL Cleaning Bruxelles</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <Head title={title} description={description} canonical={canonical} />
   </head>
   <body>
     <Nav />
