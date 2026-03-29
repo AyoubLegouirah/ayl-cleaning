@@ -12,6 +12,7 @@ export function getStaticPaths() {
 }
 
 const { zone } = Astro.props;
+const metaDescription = `Nettoyage de canapé en ${zone.region} — AYL Cleaning intervient à domicile dans ${zone.villes.slice(0, 4).map(v => v.nom).join(', ')} et plus. Devis gratuit 7j/7.`;
 ---
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ const { zone } = Astro.props;
 <head>
   <Head
     title={`Nettoyage canapé ${zone.region} | AYL Cleaning`}
-    description={`Nettoyage professionnel de canapés en ${zone.region}. AYL Cleaning intervient à domicile dans toutes les communes. Détachage, désinfection, anti-acariens. Devis gratuit — +32 488 33 89 52.`}
+    description={metaDescription}
     canonical={`/canape/${zone.slug}`}
   />
   <script type="application/ld+json" set:html={JSON.stringify({

@@ -14,6 +14,7 @@ export function getStaticPaths() {
 }
 
 const { zone, ville } = Astro.props;
+const metaDescription = `Nettoyage de canapé à ${ville.nom} — AYL Cleaning intervient à domicile 7j/7. Tissu, cuir, velours. Devis gratuit et sans engagement. Résultat garanti dans tout ${ville.nom} et ses environs.`;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ const { zone, ville } = Astro.props;
 <head>
   <Head
     title={`Nettoyage canapé ${ville.nom} | AYL Cleaning`}
-    description={`Nettoyage professionnel de canapés à ${ville.nom}. AYL Cleaning intervient à domicile. Détachage, désinfection, anti-acariens, séchage rapide. Devis gratuit — +32 488 33 89 52.`}
+    description={metaDescription}
     canonical={`/canape/${zone.slug}/${ville.slug}`}
   />
   <script type="application/ld+json" set:html={JSON.stringify({
